@@ -19,6 +19,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Route exact path="/" render={(props) => <Landing {...this.props} />} />
+          <Link to='/'>Home</Link>
           <Link to={'/schools'} >Schools</Link>
           <Route path='/schools' render={(props) => <SchoolView {...this.props} schools={mockData} />} />
         </div>

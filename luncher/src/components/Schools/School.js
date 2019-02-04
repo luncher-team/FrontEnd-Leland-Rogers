@@ -1,9 +1,17 @@
 import React from 'react'
+import { Card, CardTitle, CardBody } from 'reactstrap';
 
-export default function School() {
+export default function School(props) {
   return (
-    <div>
-      It'sa school.
-    </div>
+
+      <Card>
+        <CardTitle>
+          {props.school.school}
+        </CardTitle>
+        <CardBody>
+          {props.school.description}
+        </CardBody>
+      </Card>
+
   )
 }
