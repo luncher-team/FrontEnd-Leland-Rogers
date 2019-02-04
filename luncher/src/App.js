@@ -8,6 +8,17 @@ import { connect } from 'react-redux';
 import { Route, Link } from 'react-router-dom';
 class App extends Component {
 
+  componentDidMount() {
+    this.props.fetchSchools();
+    console.log(this.schools)
+  }
+
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.schools.length !== this.props.schools.length) {
+  //     this.props.fetchSchools();
+  //   }
+  // }
+
   render() {
     return (
       <Router>
