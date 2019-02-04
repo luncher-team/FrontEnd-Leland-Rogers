@@ -5,7 +5,9 @@ export default class Landing extends Component {
   render() {
     return (
       <div>
-        Welcome! Please make a choice:
+        Welcome to Luncher!
+
+        Use the links above to experiment.
 
       </div>
     )

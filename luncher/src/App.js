@@ -6,22 +6,21 @@ import { fetchSchools } from './actions';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Route, Link } from 'react-router-dom';
-import mockData from './mockSchoolData.json';
 class App extends Component {
 
-  // componentDidMount() {
-  //   this.props.fetchSchools();
-  //   console.log(this.schools)
-  // }
+  componentDidMount() {
+    this.props.fetchSchools();
+    console.log(this.schools)
+  }
 
   render() {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" render={(props) => <Landing {...this.props} />} />
           <Link to='/'>Home</Link>
           <Link to={'/schools'} >Schools</Link>
-          <Route path='/schools' render={(props) => <SchoolView {...this.props} schools={mockData} />} />
+          <Route exact path="/" render={(props) => <Landing {...this.props} />} />
+          <Route path='/schools' render={(props) => <SchoolView {...this.props} schools={this.props.schools} />} />
         </div>
       </Router>
     );
