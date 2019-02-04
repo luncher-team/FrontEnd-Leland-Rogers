@@ -5,7 +5,9 @@ export default class NavHead extends Component {
     return (
       <div>
         <h1>Luncher!</h1>
-
+        <div>
+         Navlinks Here. 
+        </div>
       </div>
     )
   }

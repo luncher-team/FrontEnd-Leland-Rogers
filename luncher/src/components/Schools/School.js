@@ -4,7 +4,7 @@ import { Card, CardTitle, CardBody } from 'reactstrap';
 export default function School(props) {
   return (
 
-      <Card>
+      <Card className="schoolCard">
         <CardTitle>
           {props.school.school}
         </CardTitle>
