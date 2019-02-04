@@ -1,7 +1,7 @@
-
+import { FETCH_SCHOOLS, SCHOOLS_FETCHED } from "../actions";
 
 const initialState = {
-    schoolFetch: false,
+    fetchSchools: false,
     schoolsFetched: false,
     schoolsFetchFail: false,
     donationFetch: false,
@@ -12,6 +12,19 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
     switch(action.type) {
+        case FETCH_SCHOOLS:
+            return {
+                ...state,
+                error: '',
+                isFetching: true
+            }
+        case SCHOOLS_FETCHED:
+            return {
+                ...state,
+                isFetching: false,
+                schools: action.payload,
+                error: ''
+            }
         default:
             return state;
     }
