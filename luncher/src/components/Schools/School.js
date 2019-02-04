@@ -6,10 +6,11 @@ export default function School(props) {
 
       <Card className="schoolCard">
         <CardTitle>
-          {props.school.school}
+          {props.school.name}
         </CardTitle>
         <CardBody>
           {props.school.description}
+          {props.school.requestedFunds}
         </CardBody>
       </Card>
 

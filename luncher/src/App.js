@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import Landing from './view/Landing';
 import SchoolView from './view/SchoolView';
-import { fetchSchools } from './actions';
+import { fetchSchools, addSchool } from './actions';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Route, Link } from 'react-router-dom';
 class App extends Component {
-
-  componentDidMount() {
-    this.props.fetchSchools();
-    console.log(this.schools)
-  }
 
   render() {
     return (
@@ -35,4 +30,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchSchools })(App);
+export default connect(mapStateToProps, { fetchSchools, addSchool })(App);
