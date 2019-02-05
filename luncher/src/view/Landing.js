@@ -9,7 +9,9 @@ export default class Landing extends Component {
           <div className="jumboButtons">
           </div>
         </div>
+        <div className="landingContent">
 
+        </div>
       </div>
     )
   }
