@@ -5,7 +5,9 @@ import SchoolView from './view/SchoolView';
 import { fetchSchools, addSchool } from './actions';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import NavHead from './components/Nav/NavHead';
+
 class App extends Component {
 
   componentDidMount() {
@@ -23,10 +25,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Link to='/'>Home</Link>
-          <Link to={'/schools'} >Schools</Link>
+          <NavHead />
+          <Switch>
           <Route exact path="/" render={(props) => <Landing {...this.props} />} />
           <Route path='/schools' render={(props) => <SchoolView {...this.props} schools={this.props.schools} />} />
+          </Switch>
         </div>
       </Router>
     );

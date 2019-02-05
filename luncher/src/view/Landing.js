@@ -5,9 +5,10 @@ export default class Landing extends Component {
   render() {
     return (
       <div>
-        Welcome to Luncher!
-
-        Use the links above to experiment.
+        <div className="jumboMain">
+          <div className="jumboButtons">
+          </div>
+        </div>
 
       </div>
     )
