@@ -29,6 +29,7 @@ class App extends Component {
           <Switch>
           <Route exact path="/" render={(props) => <Landing {...this.props} />} />
           <Route path='/schools' render={(props) => <SchoolView {...this.props} schools={this.props.schools} />} />
+          {/* <Route path={`/schools/${curID}`} render={(props) => <SchoolPage {...this.props} school={this.props.school} />} /> */}
           </Switch>
         </div>
       </Router>

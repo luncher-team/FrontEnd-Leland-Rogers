@@ -8,16 +8,30 @@
   padding: 5px;
 }
 
+.schoolCard CardBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* NAVIGATION */
 
 .navHead {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
 }
 
-.navHead a {
-  padding: 6px;
+.navHead .navLinks {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+
+.navHead .navLinks a {
+  margin: 0px 5px;
 }
 
 /* LANDING */
@@ -36,6 +50,15 @@
   width: 450px;
   background-color: rgb(0,0,0,.5);
   border-radius: 5px;
+}
+
+.landingContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+  width: 100%;
+  height: 400px;
 }
 
 /* SCHOOL GRID */

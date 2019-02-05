@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
-import { Form, Input, Button } from 'reactstrap';
+import { Form, Input, Button, Modal } from 'reactstrap';
+import axios from 'axios';
 
 export default class LoginForm extends Component {
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      modal: false
     }
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
   }
 
   handleChange = e => {
@@ -25,12 +34,17 @@ export default class LoginForm extends Component {
         localStorage.setItem('jwt', res.data.token);
     })
     .catch(err => console.error(err));
+    this.setState({
+      modal: false
+    })
   }
 
 
   render() {
     return (
-      <div>   
+      <div className="loginForm">
+        <Button color="primary" onClick={this.toggle}>Login</Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
          <Form onSubmit={this.handleSubmit}>
                 <div>
                     <label htmlFor="">Username</label>
@@ -54,6 +68,7 @@ export default class LoginForm extends Component {
                     <button type="submit">Signin</button>
                 </div>
             </Form>
+            </Modal>
       </div>
     )
   }
