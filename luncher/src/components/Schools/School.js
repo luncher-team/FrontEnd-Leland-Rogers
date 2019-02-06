@@ -39,7 +39,6 @@ export default class School extends Component {
         <Collapse isOpen={this.state.collapse}>
           <DonateForm {...this.props} />
         </Collapse>
-        <Route path={`/schools/:id`} render={(props) => <SchoolPage {...props} />} />
       </Card>
 
 

@@ -49,8 +49,7 @@ export const giveDonation = (donationTtl, id, requestOptions) => dispatch => {
     Axios
         .put(`https://luncher-app-backend.herokuapp.com/schools/${id}`, {
             donated: donationTtl,
-            headers: requestOptions
-        })
+        },  {headers: requestOptions})
         .then(res => {
             dispatch({ type: DONATION_SUCCESS, payload: res.data })
         })
@@ -62,12 +61,12 @@ export const giveDonation = (donationTtl, id, requestOptions) => dispatch => {
 export const login = (loginInfo) => dispatch => {
     dispatch({type: LOGGING_IN});
     Axios
-        .post(`${url}api/login/`, loginInfo)
+        .post(`https://luncher-app-backend.herokuapp.com/api/login/`, loginInfo)
         .then(res => {        
             localStorage.setItem('jwt', res.data.token);
             dispatch({type: LOGGED_IN, payload: res.data})
             Axios
-                .get(`${url}api/users/${res.data.id}`)
+                .get(`https://luncher-app-backend.herokuapp.com/api/users/${res.data.id}`)
             .then(res => {
                 dispatch({type: FETCHED_USER, payload: res.data})
             })

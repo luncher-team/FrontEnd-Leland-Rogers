@@ -7,19 +7,20 @@ export default class DonateForm extends Component {
     super(props);
     this.state = {
       school: this.props.school,
-      curAmt: this.props.donated,
-      donamt: null
+      curAmt: this.props.school.donated,
+      donamt: 0
     }
   }
 
   componentDidMount() {
     const requestOptions = {
-        'authorization': `${localStorage.getItem('jwt')}`
+        'Authorization': `${localStorage.getItem('jwt')}`
       }
     console.log(requestOptions)
     this.setState({
       requestOptions: requestOptions
     })
+    console.log(this.state.curAmt)
   }
 
   handleChange = e => {
@@ -31,6 +32,7 @@ export default class DonateForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     let donAdd = this.state.donamt + this.state.curAmt;
+    console.log(donAdd)
     this.props.giveDonation(donAdd, this.state.school.id, this.state.requestOptions);
     this.setState({
       donamt: null

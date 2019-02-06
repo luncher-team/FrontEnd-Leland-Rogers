@@ -25,7 +25,10 @@ export default class AdminHome extends Component {
             <SchoolView {...this.props} />
           </div>
           <div>
-            Admin info
+            <h3>
+              Admin info
+            </h3>
+            
             <AddSchool {...this.props} />
           </div>
         </div>
