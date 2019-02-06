@@ -20,7 +20,7 @@ export default function School(props) {
           {props.school.description}
           {props.school.requestedFunds}
         </CardBody>
-
+        <Route path={`/schools/:id`} render={(props) => <SchoolPage {...props} />} />
       </Card>
 
 

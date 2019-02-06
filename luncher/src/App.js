@@ -7,6 +7,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import NavHead from './components/Nav/NavHead';
+import SchoolPage from './components/Schools/SchoolPage';
+import Authenticate from './authentication/Authenticate';
+import LoginForm from './components/Login/LoginForm';
+import DonationHome from './view/DonationHome';
 
 class App extends Component {
 
@@ -25,11 +29,12 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <Authenticate />
           <NavHead />
           <Switch>
           <Route exact path="/" render={(props) => <Landing {...this.props} />} />
-          <Route path='/schools' render={(props) => <SchoolView {...this.props} schools={this.props.schools} />} />
-          {/* <Route path={`/schools/${curID}`} render={(props) => <SchoolPage {...this.props} school={this.props.school} />} /> */}
+          <Route exact path='/donate' render={(props) => <DonationHome {...this.props} {...props} />} />
+          <Route path={`/login`} render={(props) => <LoginForm {...props} />} />
           </Switch>
         </div>
       </Router>

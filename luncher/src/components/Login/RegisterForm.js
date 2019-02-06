@@ -21,15 +21,12 @@ export default class LoginForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     axios
-    .post('https://luncher-app-backend.herokuapp.com/api/login/', this.state)
+    .post('https://luncher-app-backend.herokuapp.com/register/', this.state)
     .then(res => {
         console.log(res)
         localStorage.setItem('jwt', res.data.token);
     })
     .catch(err => console.error(err));
-    if(localStorage.getItem('jwt')) {
-      this.props.history.push('/')
-    }
   }
 
 

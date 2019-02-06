@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import SchoolView from './SchoolView';
 
 export default class DonationHome extends Component {
   render() {
@@ -9,9 +10,7 @@ export default class DonationHome extends Component {
           <div className="jumboButtons">
           </div>
         </div>
-        <div className="landingContent">
-            We provide a means to donate to schools and children in need. Find your school or schools, click donate, and give to help those who need it!
-        </div>
+        <SchoolView {...this.props} />
       </div>
       </div>
     )

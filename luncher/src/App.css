@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Schoolbell|Rubik');
+
+
+body {
+  background-color: #1A1409;
+  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 .App {
   width: 80%;
   margin: auto;
@@ -20,7 +28,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: #E5DABD;
+}
+
+.navHead h1 {
+  font-family: 'Schoolbell', cursive;
+  padding: 5px;
+  color: white;
+  text-shadow: 2px 2px #1A1409;
+  font-size: 4em;
 }
 
 .navHead .navLinks {
@@ -31,6 +47,8 @@
 }
 
 .navHead .navLinks a {
+  color: #1A1409;
+  font-size: 1.25em;
   margin: 0px 5px;
 }
 
@@ -40,9 +58,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 550px;
-  background-image: url('./img/lunch.jpg');
+  height: 800px;
+  background-image: url('./img/dinner-dishes.jpg');
   background-size: cover;
+  background-position: center;
 }
 
 .jumboMain .jumboButtons {
@@ -68,4 +87,37 @@
   margin: auto;
   display: grid;
   grid-template-columns: 50% 50%;
+}
+
+/* DONATE */
+
+.jumboDonate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  background-image: url('./img/bg-image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* LOGIN */
+
+.loginForm {
+  min-height: 100%;
+  height: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginForm form {
+  width: 33%;
+}
+
+.loginForm button {
+  width: 100%;
+  margin-top: 5px;
 }
