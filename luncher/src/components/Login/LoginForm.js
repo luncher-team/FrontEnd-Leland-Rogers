@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Input } from 'reactstrap';
+import RegisterForm from './RegisterForm';
 import axios from 'axios';
 
 export default class LoginForm extends Component {
@@ -36,6 +37,7 @@ export default class LoginForm extends Component {
   render() {
     return (
       <div className="loginForm">
+      <h3>Log In below...</h3>
          <Form onSubmit={this.handleSubmit}>
                 <div>
                     <label htmlFor="">Username</label>
@@ -57,6 +59,7 @@ export default class LoginForm extends Component {
                 </div>
                 <div>
                     <button type="submit">Signin</button>
+                    <RegisterForm />
                 </div>
             </Form>
       </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, CardTitle, CardBody } from 'reactstrap';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import SchoolPage from './SchoolPage';
 
 

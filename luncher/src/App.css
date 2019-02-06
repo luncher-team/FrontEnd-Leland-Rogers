@@ -89,6 +89,18 @@ body {
   grid-template-columns: 50% 50%;
 }
 
+/* ADMIN */
+
+.jumboAdmin {
+  height: 100px;
+  background-color: khaki;
+}
+
+.bottomContentAdmin {
+  display: grid;
+  grid-template-columns: 77.5% 22.5%;
+}
+
 /* DONATE */
 
 .jumboDonate {
@@ -104,9 +116,6 @@ body {
 /* LOGIN */
 
 .loginForm {
-  min-height: 100%;
-  height: 250px;
-  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;

@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
-import { Form, Input } from 'reactstrap';
+import { Button, Modal, Form, Input } from 'reactstrap';
 import axios from 'axios';
 
-export default class LoginForm extends Component {
+export default class RegisterForm extends Component {
   constructor(){
     super();
     this.state = {
       username: '',
       password: '',
+      email: '',
+      modal: false
     }
+    this.toggle = this.toggle.bind(this);
   }
 
 
@@ -18,10 +21,21 @@ export default class LoginForm extends Component {
     })
   }
 
+  toggle() {
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  }
+
   handleSubmit = e => {
     e.preventDefault();
+    const newUser = {
+      username: this.state.username,
+      password: this.state.password,
+      email: this.state.email
+    }
     axios
-    .post('https://luncher-app-backend.herokuapp.com/register/', this.state)
+    .post('https://luncher-app-backend.herokuapp.com/api/register/', newUser)
     .then(res => {
         console.log(res)
         localStorage.setItem('jwt', res.data.token);
@@ -33,6 +47,8 @@ export default class LoginForm extends Component {
   render() {
     return (
       <div className="loginForm">
+        <Button color="danger" onClick={this.toggle}>Register?</Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
          <Form onSubmit={this.handleSubmit}>
                 <div>
                     <label htmlFor="">Username</label>
@@ -53,9 +69,19 @@ export default class LoginForm extends Component {
                     />
                 </div>
                 <div>
+                    <label htmlFor="">Email</label>
+                    <Input
+                        name="email"
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                        type="email"
+                    />
+                </div>
+                <div>
                     <button type="submit">Signin</button>
                 </div>
             </Form>
+            </Modal>
       </div>
     )
   }

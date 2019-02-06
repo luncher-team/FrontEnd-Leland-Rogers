@@ -10,6 +10,7 @@ export default class NavHead extends Component {
         <div className="navLinks">
         <Link to='/'>Home</Link>
         <Link to={'/donate'} >Donate</Link>
+        <Link to={'/admin'} >Admin</Link>
         </div>
       </div>
     )
