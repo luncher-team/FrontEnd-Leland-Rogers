@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-const Authenticate = App => {
+const Authenticate = AdminHome => {
     let user = localStorage.getItem('jwt');
     if(user !== null) {
         return null;

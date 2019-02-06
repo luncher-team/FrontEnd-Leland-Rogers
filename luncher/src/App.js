@@ -6,7 +6,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import NavHead from './components/Nav/NavHead';
-import Authenticate from './authentication/Authenticate';
 import LoginForm from './components/Login/LoginForm';
 import DonationHome from './view/DonationHome';
 import AdminHome from './view/AdminHome';
@@ -30,7 +29,6 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Authenticate />
           <NavHead />
           <Switch>
           <Route exact path="/" render={(props) => <Landing {...this.props} />} />
