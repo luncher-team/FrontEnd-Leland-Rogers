@@ -40,11 +40,12 @@ export const editSchool = (school) => dispatch => {
         .catch(err => console.log(err));
 }
 
-export const giveDonation = (donationTtl, id) => dispatch => {
+export const giveDonation = (donationTtl, id, requestOptions) => dispatch => {
     dispatch({ type: GIVE_DONATION });
     Axios
         .put(`https://luncher-app-backend.herokuapp.com/schools/${id}`, {
-            donated: donationTtl
+            donated: donationTtl,
+            requestOptions
         })
         .then(res => {
             dispatch({ type: DONATION_SUCCESS, payload: res.data })

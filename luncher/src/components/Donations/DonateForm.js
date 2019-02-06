@@ -12,6 +12,17 @@ export default class DonateForm extends Component {
     }
   }
 
+  componentDidMount() {
+    const requestOptions = {
+      headers: {
+        authorization: localStorage.getItem('jwt')
+      }
+    }
+    this.setState({
+      requestOptions: requestOptions
+    })
+  }
+
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -21,7 +32,7 @@ export default class DonateForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     let donAdd = this.state.donamt + this.state.curAmt;
-    this.props.giveDonation(donAdd, this.state.school.id);
+    this.props.giveDonation(donAdd, this.state.school.id, this.state.requestOptions);
     this.setState({
       donamt: null
     })
