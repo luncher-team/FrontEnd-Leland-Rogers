@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Collapse, Card, CardTitle, CardBody } from 'reactstrap';
-import { Route, Link } from 'react-router-dom';
-import SchoolPage from './SchoolPage';
+import { Link } from 'react-router-dom';
 import DonateForm from '../Donations/DonateForm';
 
 

@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 
 export default class SchoolPage extends Component {
-  constructor(props){
-    super(props);
-  }
 
   componentDidMount(){
     this.props.getSchool(this.props.match.params.id);

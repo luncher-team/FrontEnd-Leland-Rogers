@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Input } from 'reactstrap';
 import RegisterForm from './RegisterForm';
-import axios from 'axios';
 
 export default class LoginForm extends Component {
   constructor(){

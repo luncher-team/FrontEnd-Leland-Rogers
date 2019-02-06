@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
 export default class DonateForm extends Component {
@@ -49,6 +49,7 @@ export default class DonateForm extends Component {
     return (
       <div>
       <Form onSubmit={e => this.handleSubmit(e)}>
+          <FormGroup>
           <Label for="donation">Donation Amount</Label>
           <Input type="number" onChange={this.handleChange} name="donation" id="donation" placeholder="Donation amount" />
           <Label for="noC">Name on Card</Label>
@@ -58,7 +59,8 @@ export default class DonateForm extends Component {
           <Label for="expDate">Expiration Date</Label>
           <Input type="text" name="expDate" id="expDate" placeholder="Expiration date" />
           <Label for="secC">Security Code</Label>
-          <Input type="number" name="secC" id="secC" placeholder="Security code" />     
+          <Input type="number" name="secC" id="secC" placeholder="Security code" />    
+          </FormGroup> 
           <Button>Submit</Button>
       </Form>
       </div>
