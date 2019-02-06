@@ -14,6 +14,8 @@ export const LOGGING_IN = "LOGGING_IN";
 export const LOGGED_IN = "LOGGED_IN";
 export const FETCHING_USER = "FETCHING_USER";
 export const FETCHED_USER = "FETCHED_USER";
+export const GET_SCHOOL = "GET_SCHOOL";
+export const GOT_SCHOOL = "GOT_SCHOOL";
 
 export const fetchSchools = () => dispatch => {
     dispatch({ type: FETCH_SCHOOLS });
@@ -23,10 +25,11 @@ export const fetchSchools = () => dispatch => {
         .catch(err => console.log('error'))
 }
 
-export const addSchool = (school) => dispatch => {
+export const addSchool = (school, requestOptions) => dispatch => {
     dispatch({ type: ADD_SCHOOL });
     Axios
-        .post(`https://luncher-app-backend.herokuapp.com/schools/`, school)
+        .post(`https://luncher-app-backend.herokuapp.com/schools/`, school,
+        {headers: requestOptions})
         .then(res => {
             dispatch({ type: SCHOOL_ADDED, payload: res.data});
         })
@@ -74,4 +77,12 @@ export const login = (loginInfo) => dispatch => {
         })
         .catch(err => console.error(err));  
     
+}
+
+export const getSchool = (schoolID) => dispatch => {
+    dispatch({type: GET_SCHOOL});
+    Axios
+        .get(`https://luncher-app-backend.herokuapp.com/schools/${schoolID}`)
+        .then(res => dispatch({ type: GOT_SCHOOL, payload: res.data }))
+        .catch(err => console.log('error'))
 }

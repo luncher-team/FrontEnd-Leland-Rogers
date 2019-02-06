@@ -1,4 +1,4 @@
-import { FETCH_SCHOOLS, SCHOOLS_FETCHED, ADD_SCHOOL, SCHOOL_ADDED, EDIT_SCHOOL, EDIT_COMPLETE, GIVE_DONATION, DONATION_SUCCESS, LOGGED_IN, LOGGING_IN, FETCHING_USER, FETCHED_USER } from "../actions";
+import { FETCH_SCHOOLS, SCHOOLS_FETCHED, ADD_SCHOOL, SCHOOL_ADDED, EDIT_SCHOOL, EDIT_COMPLETE, GIVE_DONATION, DONATION_SUCCESS, LOGGED_IN, LOGGING_IN, FETCHING_USER, FETCHED_USER, GET_SCHOOL, GOT_SCHOOL } from "../actions";
 
 const initialState = {
     fetchSchools: false,
@@ -8,7 +8,8 @@ const initialState = {
     donationAdded: false,
     error: null,
     schools: [],
-    userInfo: []
+    userInfo: [],
+    thisSchool: {}
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -89,6 +90,17 @@ const rootReducer = (state = initialState, action) => {
                 fetchingUser: false,
                 fetchedUser: true,
                 userInfo: action.payload
+            }
+        case GET_SCHOOL:
+            return {
+                ...state,
+                getSchool: true
+            }
+        case GOT_SCHOOL: 
+            return {
+                ...state,
+                getSchool: false,
+                thisSchool: action.payload
             }
         default:
             return state;

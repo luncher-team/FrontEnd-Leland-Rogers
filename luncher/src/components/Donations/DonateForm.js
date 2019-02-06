@@ -8,11 +8,12 @@ export default class DonateForm extends Component {
     this.state = {
       school: this.props.school,
       curAmt: this.props.school.donated,
-      donamt: 0
+      donation: 0
     }
   }
 
   componentDidMount() {
+    console.log(this.state.curAmt)
     if(this.state.curAmt === null){
       this.setState({
         curAmt: 0
@@ -25,8 +26,6 @@ export default class DonateForm extends Component {
     this.setState({
       requestOptions: requestOptions
     })
-    console.log(this.props.school.donated)
-    console.log(this.state.curAmt)
   }
 
   handleChange = e => {
@@ -37,11 +36,12 @@ export default class DonateForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    let donAdd = this.state.donamt + this.state.curAmt;
+    let donAdd = Number(this.state.donation) + Number(this.state.curAmt);
     console.log(donAdd)
     this.props.giveDonation(donAdd, this.state.school.id, this.state.requestOptions);
     this.setState({
-      donamt: null
+      donation: 0,
+      curAmt: this.props.school.donated
     })
   }
 
@@ -50,7 +50,7 @@ export default class DonateForm extends Component {
       <div>
       <Form onSubmit={e => this.handleSubmit(e)}>
           <Label for="donation">Donation Amount</Label>
-          <Input type="number" name="donation" id="donation" placeholder="Donation amount" />
+          <Input type="number" onChange={this.handleChange} name="donation" id="donation" placeholder="Donation amount" />
           <Label for="noC">Name on Card</Label>
           <Input type="text" name="noC" id="noC" placeholder="Name on Card" />
           <Label for="numC">Card Number</Label>

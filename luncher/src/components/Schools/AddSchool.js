@@ -24,6 +24,10 @@ export default class AddSchool extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const requestOptions = {
+      'Authorization': `${localStorage.getItem('jwt')}`
+    }
+
     let schoolHold = {
       name: this.state.curSchool,
       description: this.state.curDescription,
@@ -31,7 +35,7 @@ export default class AddSchool extends Component {
       requested_funds: this.state.curFunds,
       donated: this.state.curDonated
     }
-    this.props.addSchool(schoolHold);
+    this.props.addSchool(schoolHold, requestOptions);
     this.setState({
       curSchool: '',
       curDescription: '',

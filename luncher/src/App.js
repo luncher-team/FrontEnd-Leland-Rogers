@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Landing from './view/Landing';
-import { fetchSchools, addSchool, giveDonation, login } from './actions';
+import { fetchSchools, addSchool, giveDonation, login, getSchool } from './actions';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
@@ -14,10 +14,8 @@ import SchoolPage from './components/Schools/SchoolPage';
 
 class App extends Component {
 
-  
   componentDidMount() {
     this.props.fetchSchools();
-    console.log(this.schools)
   }
 
   // componentDidUpdate(prevProps) {
@@ -50,8 +48,10 @@ const mapStateToProps = state => {
     schools: state.schools,
     isFetching: state.isFetching,
     error: state.error,
-    login: state.login
+    login: state.login,
+    getSchool: state.getSchool,
+    thisSchool: state.thisSchool
   };
 };
 
-export default connect(mapStateToProps, { fetchSchools, addSchool, giveDonation, login })(App);
+export default connect(mapStateToProps, { fetchSchools, addSchool, giveDonation, login, getSchool })(App);
