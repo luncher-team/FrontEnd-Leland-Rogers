@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Landing from './view/Landing';
-import { fetchSchools, addSchool } from './actions';
+import { fetchSchools, addSchool, giveDonation } from './actions';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
@@ -51,4 +51,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchSchools, addSchool })(App);
+export default connect(mapStateToProps, { fetchSchools, addSchool, giveDonation })(App);

@@ -5,7 +5,7 @@ export default function Schools(props) {
   return (
     <div className="schoolGrid">
       {props.schools.map(school => (
-          <School school={school} />
+          <School school={school} {...props} />
       ))}
     </div>
   )

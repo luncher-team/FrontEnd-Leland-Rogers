@@ -28,7 +28,7 @@ export default class AddSchool extends Component {
       name: this.state.curSchool,
       description: this.state.curDescription,
       address: this.state.curAddress,
-      requestedFunds: this.state.curFunds,
+      requested_funds: this.state.curFunds,
       donated: this.state.curDonated
     }
     this.props.addSchool(schoolHold);
