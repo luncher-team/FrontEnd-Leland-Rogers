@@ -10,6 +10,10 @@ export const EDIT_COMPLETE = "EDIT_COMPLETE";
 export const GIVE_DONATION = "GIVE_DONATION";
 export const DONATION_SUCCESS = "DONATION_SUCCESS";
 export const DONATION_FAIL = "DONATION_FAIL";
+export const LOGGING_IN = "LOGGING_IN";
+export const LOGGED_IN = "LOGGED_IN";
+export const FETCHING_USER = "FETCHING_USER";
+export const FETCHED_USER = "FETCHED_USER";
 
 export const fetchSchools = () => dispatch => {
     dispatch({ type: FETCH_SCHOOLS });
@@ -53,4 +57,22 @@ export const giveDonation = (donationTtl, id, requestOptions) => dispatch => {
         .catch(err => {
             console.log(err);
         })
+}
+
+export const login = (loginInfo) => dispatch => {
+    dispatch({type: LOGGING_IN});
+    Axios
+        .post(`${url}api/login/`, loginInfo)
+        .then(res => {        
+            localStorage.setItem('jwt', res.data.token);
+            dispatch({type: LOGGED_IN, payload: res.data})
+            Axios
+                .get(`${url}api/users/${res.data.id}`)
+            .then(res => {
+                dispatch({type: FETCHED_USER, payload: res.data})
+            })
+            .catch(err => console.error(err));
+        })
+        .catch(err => console.error(err));  
+    
 }
