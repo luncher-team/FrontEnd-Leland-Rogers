@@ -13,6 +13,11 @@ export default class DonateForm extends Component {
   }
 
   componentDidMount() {
+    if(this.state.curAmt === null){
+      this.setState({
+        curAmt: 0
+      })
+    }
     const requestOptions = {
         'Authorization': `${localStorage.getItem('jwt')}`
       }
@@ -20,6 +25,7 @@ export default class DonateForm extends Component {
     this.setState({
       requestOptions: requestOptions
     })
+    console.log(this.props.school.donated)
     console.log(this.state.curAmt)
   }
 
