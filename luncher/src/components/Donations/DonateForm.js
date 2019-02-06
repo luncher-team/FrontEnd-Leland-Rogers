@@ -14,10 +14,9 @@ export default class DonateForm extends Component {
 
   componentDidMount() {
     const requestOptions = {
-      headers: {
-        authorization: localStorage.getItem('jwt')
+        'authorization': `${localStorage.getItem('jwt')}`
       }
-    }
+    console.log(requestOptions)
     this.setState({
       requestOptions: requestOptions
     })

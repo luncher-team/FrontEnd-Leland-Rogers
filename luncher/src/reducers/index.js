@@ -6,7 +6,8 @@ const initialState = {
     schoolsFetchFail: false,
     addDonation: false,
     donationAdded: false,
-    error: null
+    error: null,
+    schools: []
 }
 
 const rootReducer = (state = initialState, action) => {

@@ -45,7 +45,7 @@ export const giveDonation = (donationTtl, id, requestOptions) => dispatch => {
     Axios
         .put(`https://luncher-app-backend.herokuapp.com/schools/${id}`, {
             donated: donationTtl,
-            requestOptions
+            headers: requestOptions
         })
         .then(res => {
             dispatch({ type: DONATION_SUCCESS, payload: res.data })

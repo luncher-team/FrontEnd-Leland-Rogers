@@ -39,8 +39,12 @@ export default class RegisterForm extends Component {
     .then(res => {
         console.log(res)
         localStorage.setItem('jwt', res.data.token);
+        localStorage.setItem('username', res.data.username);
     })
     .catch(err => console.error(err));
+    if(localStorage.getItem('jwt')) {
+      this.props.history.push('/')
+    }
   }
 
 
