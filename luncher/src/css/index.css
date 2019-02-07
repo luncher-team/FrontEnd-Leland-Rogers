@@ -9096,6 +9096,10 @@ section a.divider .leading-arrow:hover {
   border-radius: 0;
   font-size: 1.6rem;
 }
+.sign-in-page .splash .login .login-register-buttons {
+  max-width: 450px;
+  margin: 0 auto;
+}
 .sign-in-page .splash .login p {
   text-shadow: 1px 1px 5px black;
 }

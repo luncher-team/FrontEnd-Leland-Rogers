@@ -64,20 +64,7 @@ export default class LoginForm extends Component {
               </div>
 
             </Form>
-          </div>
-
-          {/* <form className="login">
-            <h3>Sign-in to your account</h3>
-              <br></br>
-            <input type="text" id="fname" name="fname" placeholder="Email">
-              <br></br>
-            <input type="text" id="lname" name="lname" placeholder="Password">
-            <div className="btn">Sign-In</div>
-              <br></br>
-            <p><a href="./resetpassword.html">Need help?</a> | <a href="">Don't have an account?</a></p>
-          </form> */}
-          
-            
+          </div>            
             
         </section>
 
@@ -123,6 +110,10 @@ export default class LoginForm extends Component {
           </section>
         
         </section>
+        <footer>
+          <p>Copyright Luncher 2019</p>
+        </footer>
+        
       </div>
       </React.Fragment>
     )
