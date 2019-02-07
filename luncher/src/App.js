@@ -10,7 +10,8 @@ import DonationHome from './view/DonationHome';
 import AdminHome from './view/AdminHome';
 import RegisterForm from './components/Login/RegisterForm';
 import SchoolPage from './components/Schools/SchoolPage';
-
+import './css/index.css';
+import './css/leaflet.css';
 
 class App extends Component {
   constructor(){
