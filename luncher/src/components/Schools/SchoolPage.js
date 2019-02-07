@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Authenticate from '../../authentication/Authenticate';
 import DonateForm from '../Donations/DonateForm';
-import { Button, Collapse } from 'reactstrap';
+import { Progress, Button, Collapse } from 'reactstrap';
 import EditSchool from './EditSchool';
 
 export default class SchoolPage extends Component {
@@ -37,6 +37,15 @@ export default class SchoolPage extends Component {
     this.props.history.push('/')
   }
 
+  renderProgress() {
+    const one = this.props.thisSchool.donated
+    const two = this.props.thisSchool.requested_funds
+    console.log(this.props.thisSchool.requested_funds)
+    const progress = Math.round((one / two) * 100);
+    console.log(progress)
+    return progress;
+  }
+
   render() {
     return (
       <div>
@@ -48,12 +57,13 @@ export default class SchoolPage extends Component {
           <div className="schoolAbout">
             About: {this.props.thisSchool.description}
           </div>
+            <Progress animated color="info" value={this.renderProgress()}>{this.renderProgress()}%</Progress>
           <div className="donateTtl">
             Total amount donated: ${this.props.thisSchool.donated}
           </div>
         </div>
         <div className="donateHold">
-        <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Donate Now</Button>
+        <Button color="info" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Donate Now</Button>
           <Collapse {...this.props} isOpen={this.state.collapse}>
             <DonateForm donateschool={this.props.thisSchool}
                         donated={this.props.thisSchool.donated}
