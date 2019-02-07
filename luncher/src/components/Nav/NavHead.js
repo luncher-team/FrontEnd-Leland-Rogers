@@ -5,14 +5,13 @@ export default class NavHead extends Component {
 
   render() {
     return (
-      <div className="navHead">
-        <h1>Luncher</h1>
-        <div className="navLinks">
-        <Link to='/'>Home</Link>
-        <Link to={'/donate'} >Donate</Link>
-        <Link to={'/admin'} >Admin</Link>
-        </div>
-      </div>
+      <nav className="navHead">
+        <h1><Link to='/'>Luncher</Link></h1>
+        <ul>
+          <li><Link to='./donate' className='btn'>Donate</Link></li>
+          <li><Link to='./signin' className='btn'>Sign-In</Link></li>
+        </ul>
+      </nav>
     )
   }
 }
