@@ -7,20 +7,12 @@ export default class DonationHome extends Component {
   render() {
     return (
       <React.Fragment>
-      <div>
-        <div>
-          <div className="jumboDonate">
-            <div className="jumboButtons"></div>
-          </div>
-          <SchoolView {...this.props} />
-        </div>
-      </div>
       <div className="donate">
 
         <section className="schools-by-state">
           <div className="school-filter-bar">
             <h1>Donate</h1>
-            <p>Filter school by state</p>
+            {/* <p>Filter school by state</p>
             <div className="container">
               <div className="row">
                 <div className="col-6 col-sm-4 col-md-2 py-2 centered"><div className="state-labels"><Link to="" className="btn">AL</Link></div></div>
@@ -34,7 +26,7 @@ export default class DonationHome extends Component {
                 <div className="col-6 col-sm-4 col-md-2 py-2 centered"><div className="state-labels"><Link to="" className="btn">TX</Link></div></div>
                 <div className="col-6 col-sm-4 col-md-2 py-2 centered"><div className="state-labels"><Link to="" className="btn">WA</Link></div></div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
 
@@ -43,7 +35,7 @@ export default class DonationHome extends Component {
           <div className="container-fluid">
             <div className="row">
 
-              <div className="col-12 col-sm-6 col-lg-4 my-4 centered">
+              {/* <div className="col-12 col-sm-6 col-lg-4 my-4 centered">
                 <div className="card">
                   <img  src={Ruskin} className="card-img-top" alt="Card image cap" />
                   <div className="card-body">
@@ -55,8 +47,8 @@ export default class DonationHome extends Component {
                     <Link to="" className="btn">Donate</Link>
                   </div>
                 </div>
-              </div>
-
+              </div> */}
+          <SchoolView {...this.props} />
             </div>
           </div>
         </section>
@@ -102,7 +94,6 @@ export default class DonationHome extends Component {
           </section>
         
         </section> 
-
 
         <footer>
           <p>Copyright Luncher 2019</p>
