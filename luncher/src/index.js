@@ -7,9 +7,10 @@ import logger from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers';
 import { Provider } from 'react-redux';
+import { SnackbarProvider } from 'notistack';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><SnackbarProvider maxSnack={3}><App /></SnackbarProvider></Provider>, document.getElementById('root'));

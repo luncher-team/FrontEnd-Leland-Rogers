@@ -25,7 +25,7 @@ export const fetchSchools = () => dispatch => {
     Axios
         .get('https://luncher-app-backend.herokuapp.com/schools/')
         .then(res => dispatch({ type: SCHOOLS_FETCHED, payload: res.data }))
-        .catch(err => console.log('error'))
+        .catch(err => dispatch({ type: FETCH_FAIL, payload: err.response }))
 }
 
 export const addSchool = (school, requestOptions) => dispatch => {
@@ -60,9 +60,7 @@ export const giveDonation = (donationTtl, id, requestOptions) => dispatch => {
         .then(res => {
             dispatch({ type: DONATION_SUCCESS, payload: res.data })
         })
-        .catch(err => {
-            console.log(err);
-        })
+        .catch(err => dispatch({ type: DONATION_FAIL, payload: err.response }))
 }
 
 export const login = (loginInfo) => dispatch => {

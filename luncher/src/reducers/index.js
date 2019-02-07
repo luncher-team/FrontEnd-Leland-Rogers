@@ -1,4 +1,21 @@
-import { FETCH_SCHOOLS, SCHOOLS_FETCHED, ADD_SCHOOL, SCHOOL_ADDED, EDIT_SCHOOL, EDIT_COMPLETE, GIVE_DONATION, DONATION_SUCCESS, LOGGED_IN, LOGGING_IN, FETCHING_USER, FETCHED_USER, GET_SCHOOL, GOT_SCHOOL, REMOVE_SCHOOL, SCHOOL_REMOVED } from "../actions";
+import { FETCH_SCHOOLS,
+         SCHOOLS_FETCHED, 
+         ADD_SCHOOL, 
+         SCHOOL_ADDED, 
+         EDIT_SCHOOL, 
+         EDIT_COMPLETE, 
+         GIVE_DONATION, 
+         DONATION_SUCCESS, 
+         LOGGED_IN, 
+         LOGGING_IN, 
+         FETCHING_USER, 
+         FETCHED_USER, 
+         GET_SCHOOL, 
+         GOT_SCHOOL, 
+         REMOVE_SCHOOL, 
+         SCHOOL_REMOVED, 
+         DONATION_FAIL, 
+         FETCH_FAIL } from "../actions";
 
 
 const initialState = {
@@ -11,10 +28,10 @@ const initialState = {
     fetchingUser: false,
     getSchool: false,
     removeSchool: false,
-    error: null,
+    error: '',
     schools: [],
     userInfo: [],
-    thisSchool: {},
+    thisSchool: [],
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -31,6 +48,12 @@ const rootReducer = (state = initialState, action) => {
                 isFetching: false,
                 schools: action.payload,
                 error: ''
+            }
+        case FETCH_FAIL:
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload
             }
         case ADD_SCHOOL: 
             return {
@@ -70,6 +93,12 @@ const rootReducer = (state = initialState, action) => {
                 isDonating: false,
                 error: '',
                 donated: action.payload
+            }
+        case DONATION_FAIL:
+            return {
+                ...state,
+                isDonating: false,
+                error: action.payload
             }
         case LOGGING_IN:
             return{

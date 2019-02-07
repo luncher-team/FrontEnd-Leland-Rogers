@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
 export default class DonateForm extends Component {
@@ -7,22 +7,16 @@ export default class DonateForm extends Component {
     super(props);
     this.state = {
       school: this.props.school,
-      curAmt: this.props.school.donated,
+      curAmt: this.props.curAmt,
       donation: 0
     }
   }
 
   componentDidMount() {
     console.log(this.state.curAmt)
-    if(this.state.curAmt === null){
-      this.setState({
-        curAmt: 0
-      })
-    }
     const requestOptions = {
         'Authorization': `${localStorage.getItem('jwt')}`
       }
-    console.log(requestOptions)
     this.setState({
       requestOptions: requestOptions
     })
@@ -36,6 +30,11 @@ export default class DonateForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    if(this.state.curAmt === null){
+      this.setState({
+        curAmt: 0
+      })
+    }
     let donAdd = Number(this.state.donation) + Number(this.state.curAmt);
     console.log(donAdd)
     this.props.giveDonation(donAdd, this.state.school.id, this.state.requestOptions);
@@ -50,18 +49,36 @@ export default class DonateForm extends Component {
       <div>
       <Form onSubmit={e => this.handleSubmit(e)}>
           <FormGroup>
-          <Label for="donation">Donation Amount</Label>
-          <Input type="number" onChange={this.handleChange} name="donation" id="donation" placeholder="Donation amount" />
-          <Label for="noC">Name on Card</Label>
-          <Input type="text" name="noC" id="noC" placeholder="Name on Card" />
-          <Label for="numC">Card Number</Label>
-          <Input type="number" name="numC" id="numC" min="12" max="12" placeholder="Card Number" />
-          <Label for="expDate">Expiration Date</Label>
-          <Input type="text" name="expDate" id="expDate" placeholder="Expiration date" />
-          <Label for="secC">Security Code</Label>
-          <Input type="number" name="secC" id="secC" placeholder="Security code" />    
+            <Row form>
+              <Col md={6}>
+                <Label for="donation">Donation Amount</Label>
+                <Input type="number" onChange={this.handleChange} name="donation" id="donation" placeholder="Donation amount" />
+              </Col>
+            </Row>
+            <Row form>
+              <Col md={6}>
+                <Label for="noC">Name on Card</Label>
+                <Input type="text" name="noC" id="noC" placeholder="Name on Card" />
+              </Col>
+            </Row>
+          <Row form>
+              <Col md={6}>
+                <Label for="numC">Card Number</Label>
+                <Input type="number" name="numC" maxLength="12" id="numC" placeholder="Card Number" />
+              </Col>
+          </Row>
+          <Row form>
+              <Col md={3}>
+                <Label for="expDate">Expiration Date</Label>
+                <Input type="text" name="expDate" maxLength="4" id="expDate" placeholder="Expiration date" />
+              </Col>
+              <Col md={3}>
+                <Label for="secC">Security Code</Label>
+                <Input type="number" name="secC" maxLength="3" id="secC" placeholder="Security code" />
+              </Col>  
+          </Row>  
           </FormGroup> 
-          <Button>Submit</Button>
+          <Button onClick={e => this.handleSubmit(e)}>Submit</Button>
       </Form>
       </div>
     )

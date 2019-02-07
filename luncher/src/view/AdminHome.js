@@ -20,7 +20,7 @@ export default class AdminHome extends Component {
           <div className="jumboButtons">
           </div>
         </div>
-        <div class="bottomContentAdmin">
+        <div className="bottomContentAdmin">
           <div className="listedAdmin">
             <SchoolView {...this.props} />
           </div>

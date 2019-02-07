@@ -62,8 +62,14 @@ export default class AddSchool extends Component {
         <Form onSubmit={e => this.handleSubmit(e)}>
           <FormGroup>
             <Input required onChange={this.handleChange} type="text" placeholder="School name" name="curSchool" value={this.state.curSchool} />
-            <Input required onChange={this.handleChange} type="textarea" placeholder="School description" name="curDescription" value={this.state.curDescription} />
-            <Input required onChange={this.handleChange} type="text" placeholder="School address" name="curAddress" value={this.state.curAddress} />
+            </FormGroup>
+            <FormGroup>
+              <Input required onChange={this.handleChange} type="textarea" placeholder="School description" name="curDescription" value={this.state.curDescription} />
+            </FormGroup>
+            <FormGroup>
+              <Input required onChange={this.handleChange} type="text" placeholder="School address" name="curAddress" value={this.state.curAddress} />
+            </FormGroup>
+            <FormGroup>
             <Input required onChange={this.handleChange} type="number" placeholder="Funds requested" name="curFunds" value={this.state.curFunds} />
 
           </FormGroup>

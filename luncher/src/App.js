@@ -12,6 +12,7 @@ import AdminHome from './view/AdminHome';
 import RegisterForm from './components/Login/RegisterForm';
 import SchoolPage from './components/Schools/SchoolPage';
 
+
 class App extends Component {
 
   componentDidMount() {
