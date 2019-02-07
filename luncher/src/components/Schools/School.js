@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardTitle, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
+
 export default class School extends Component {
 
   render(){
