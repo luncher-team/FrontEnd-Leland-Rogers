@@ -3,6 +3,10 @@ import School from './School';
 
 
 class Schools extends Component {
+  
+  componentDidMount() {
+    this.props.fetchSchools();
+  }
   render(){
   return (
     <div className="schoolGrid">

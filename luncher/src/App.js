@@ -18,11 +18,11 @@ class App extends Component {
     this.props.fetchSchools();
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.schools.length !== this.props.schools.length) {
-  //     this.props.fetchSchools();
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    if (prevProps.schools.length !== this.props.schools.length) {
+      this.props.fetchSchools();
+    }
+  }
 
   render() {
     return (
