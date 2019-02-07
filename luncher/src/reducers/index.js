@@ -15,7 +15,8 @@ import { FETCH_SCHOOLS,
          REMOVE_SCHOOL, 
          SCHOOL_REMOVED, 
          DONATION_FAIL, 
-         FETCH_FAIL } from "../actions";
+         FETCH_FAIL, 
+         EDIT_FAIL} from "../actions";
 
 
 const initialState = {
@@ -73,6 +74,12 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 isEditing: true,
                 error: ''
+            }
+        case EDIT_FAIL:
+            return {
+                ...state,
+                isEditing: false,
+                error: action.payload
             }
         case EDIT_COMPLETE:
             return {

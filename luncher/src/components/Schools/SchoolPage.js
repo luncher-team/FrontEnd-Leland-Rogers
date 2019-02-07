@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Authenticate from '../../authentication/Authenticate';
 import DonateForm from '../Donations/DonateForm';
 import { Button, Collapse } from 'reactstrap';
+import EditSchool from './EditSchool';
 
 export default class SchoolPage extends Component {
   constructor(props){
@@ -38,6 +39,7 @@ export default class SchoolPage extends Component {
         <Collapse {...this.props} isOpen={this.state.collapse}>
           <DonateForm {...this.props} />
         </Collapse>
+        <EditSchool {...this.props} />
       </div>
     )
   }
