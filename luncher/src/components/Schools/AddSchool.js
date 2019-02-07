@@ -9,6 +9,8 @@ export default class AddSchool extends Component {
       curDescription: '',
       curAddress: '',
       curFunds: '',
+      curCity: '',
+      curState: '',
       curDonated: 0,
       modal: false
     }
@@ -34,6 +36,8 @@ export default class AddSchool extends Component {
       address: this.state.curAddress,
       requested_funds: this.state.curFunds,
       donated: this.state.curDonated,
+      city: this.state.curCity,
+      state: this.state.curState,
       admin_id: this.props.userInfo.id
     }
     this.props.addSchool(schoolHold, requestOptions);
@@ -42,6 +46,8 @@ export default class AddSchool extends Component {
       curDescription: '',
       curAddress: '',
       curFunds: '',
+      curCity: '',
+      curState: '',
       curDonated: 0,
       modal: false
     })
@@ -72,8 +78,13 @@ export default class AddSchool extends Component {
               <Input required onChange={this.handleChange} type="text" placeholder="School address" name="curAddress" value={this.state.curAddress} />
             </FormGroup>
             <FormGroup>
+              <Input required onChange={this.handleChange} type="text" placeholder="City" name="curCity" value={this.state.curCity} />
+            </FormGroup>
+            <FormGroup>
+              <Input required onChange={this.handleChange} type="text" placeholder="State" name="curState" value={this.state.curState} />
+            </FormGroup>
+            <FormGroup>
             <Input required onChange={this.handleChange} type="number" placeholder="Funds requested" name="curFunds" value={this.state.curFunds} />
-
           </FormGroup>
           <Button>Submit</Button>
         </Form>

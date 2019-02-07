@@ -2,6 +2,7 @@ import React from 'react'
 import School from './School';
 
 export default function Schools(props) {
+  if(props.schools){
   return (
     <div className="schoolGrid">
       {props.schools.map(school => (
@@ -13,4 +14,7 @@ export default function Schools(props) {
       ))}
     </div>
   )
+      } else {
+        return <h1>Currently loading...</h1>
+      }
 }

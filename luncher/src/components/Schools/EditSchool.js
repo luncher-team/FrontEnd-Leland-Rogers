@@ -18,7 +18,14 @@ export default class EditSchool extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    this.setState({ data: nextProps.data })
+    this.setState({ 
+      id: nextProps.id,
+      curSchool: nextProps.name,
+      curDescription: nextProps.description,
+      curAddress: nextProps.address,
+      curFunds: nextProps.requested_funds,
+      userInfo: this.props.userInfo
+     })
   }
 
   handleChange = e => {

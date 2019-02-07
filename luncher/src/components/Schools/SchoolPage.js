@@ -4,7 +4,7 @@ import DonateForm from '../Donations/DonateForm';
 import { Progress, Button, Collapse } from 'reactstrap';
 import EditSchool from './EditSchool';
 
-export default class SchoolPage extends Component {
+class SchoolPage extends Component {
   constructor(props){
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -38,7 +38,6 @@ export default class SchoolPage extends Component {
       'Authorization': `${localStorage.getItem('jwt')}`
     }
     this.props.removeSchool(this.state.thisSchool, requestOptions)
-    this.props.history.push('/')
   }
 
   renderProgress() {
@@ -52,7 +51,7 @@ export default class SchoolPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="schoolPageFull">
        <Authenticate />
         <div className="schoolPageInfo">
           <h2>
@@ -91,3 +90,6 @@ export default class SchoolPage extends Component {
     )
   }
 }
+
+
+export default SchoolPage;

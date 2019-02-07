@@ -8,8 +8,6 @@ body {
 
 .App {
   background-color: white;
-  width: 80%;
-  margin: auto;
 }
 
 .schoolCard {
@@ -34,10 +32,10 @@ body {
 
 .navHead h1 {
   font-family: 'Schoolbell', cursive;
-  padding: 10px;
+  padding: 12px;
   color: white;
   text-shadow: 2px 2px #1A1409;
-  font-size: 5em;
+  font-size: 4.5em;
 }
 
 .navHead .navLinks {
@@ -48,10 +46,10 @@ body {
 }
 
 .navHead .navLinks a {
-  background-color: #1A1409;
+  background-color: darkkhaki;
   font-family: 'Rubik', Arial, Helvetica, sans-serif;
-  border-radius: 5px;
-  color: white;
+  border-radius: 3px;
+  color: rgb(43, 43, 43);
   padding: 5px 10px;
   font-size: 1.1em;
   margin: 0px 5px;
@@ -105,6 +103,11 @@ body {
 
 .schoolPageInfo {
   padding: 10px;
+}
+
+.schoolPageFull {
+  width: 80%;
+  margin: auto;
 }
 
 .schoolPageInfo h2 {
