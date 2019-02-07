@@ -29,15 +29,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #E5DABD;
+  background-color: #AE4110;
 }
 
 .navHead h1 {
   font-family: 'Schoolbell', cursive;
-  padding: 5px;
+  padding: 10px;
   color: white;
   text-shadow: 2px 2px #1A1409;
-  font-size: 4em;
+  font-size: 5em;
 }
 
 .navHead .navLinks {
@@ -48,8 +48,12 @@ body {
 }
 
 .navHead .navLinks a {
-  color: #1A1409;
-  font-size: 1.25em;
+  background-color: #1A1409;
+  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 10px;
+  font-size: 1.1em;
   margin: 0px 5px;
 }
 
@@ -59,7 +63,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 800px;
+  height: 700px;
   background-image: url('./img/dinner-dishes.jpg');
   background-size: cover;
   background-position: center;
@@ -91,11 +95,57 @@ body {
   grid-template-columns: 50% 50%;
 }
 
+/* SCHOOL PAGE */
+
+.schoolPageInfo {
+  padding: 10px;
+}
+
+.schoolPageInfo h2 {
+  font-size: 3em;
+  font-weight: bold;
+  font-family: 'Rubik', 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.schoolAbout {
+  background-color: rgba(61, 75, 23, 0.5);
+  padding: 10px;
+  color: white;
+}
+
+.donateTtl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Rubik', 'Roboto', Arial, Helvetica, sans-serif;
+  padding: 50px 10px;
+  font-size: 1.75em;
+}
+
+.donateHold {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.donateForm {
+  display: flex;
+  justify-content: center;
+}
+
+.adminTasks {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 /* ADMIN */
 
 .jumboAdmin {
-  height: 100px;
-  background-color: khaki;
+  background-image: url(./img/bg-image.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 700px;
 }
 
 .bottomContentAdmin {
@@ -109,8 +159,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 800px;
-  background-image: url('./img/bg-image.jpg');
+  height: 700px;
+  background-image: url('./img/lunch.jpg');
   background-size: cover;
   background-position: center;
 }

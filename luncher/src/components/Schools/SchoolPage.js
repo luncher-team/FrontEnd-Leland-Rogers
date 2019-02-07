@@ -41,21 +41,38 @@ export default class SchoolPage extends Component {
     return (
       <div>
        <Authenticate />
-        <h2>
-          {this.props.thisSchool.name}
-        </h2>
-        <div>
-          Info: {this.props.thisSchool.description}
+        <div className="schoolPageInfo">
+          <h2>
+            {this.props.thisSchool.name}
+          </h2>
+          <div className="schoolAbout">
+            About: {this.props.thisSchool.description}
+          </div>
+          <div className="donateTtl">
+            Total amount donated: ${this.props.thisSchool.donated}
+          </div>
         </div>
-        <div>
-          Total amount donated: ${this.props.thisSchool.donated}
-        </div>
+        <div className="donateHold">
         <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Donate Now</Button>
-        <Collapse {...this.props} isOpen={this.state.collapse}>
-          <DonateForm {...this.props} />
-        </Collapse>
-        <EditSchool {...this.props} />
-        <Button color="danger" onClick={this.handleDeleteSchool}>Delete</Button>
+          <Collapse {...this.props} isOpen={this.state.collapse}>
+            <DonateForm donateschool={this.props.thisSchool}
+                        donated={this.props.thisSchool.donated}
+                        id={this.props.thisSchool.id}
+                        giveDonation={this.props.giveDonation} />
+          </Collapse>
+        </div>
+        <div className="adminTasks">
+          <EditSchool 
+                  id={this.props.thisSchool.id}
+                  name={this.props.thisSchool.name}
+                  description={this.props.thisSchool.description}
+                  address={this.props.thisSchool.address}
+                  requested_funds={this.props.thisSchool.requested_funds}
+                  userInfo={this.props.userInfo}
+                  editSchool={this.props.editSchool}
+                   />
+          <Button color="danger" onClick={this.handleDeleteSchool}>Delete</Button>
+        </div>
       </div>
     )
   }

@@ -5,11 +5,12 @@ export default class EditSchool extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      curSchool: this.props.thisSchool.name,
-      curDescription: this.props.thisSchool.description,
-      curAddress: this.props.thisSchool.address,
-      curFunds: this.props.thisSchool.requested_funds,
-      id: this.props.thisSchool.id,
+      curSchool: this.props.name,
+      curDescription: this.props.description,
+      curAddress: this.props.address,
+      curFunds: this.props.requested_funds,
+      id: this.props.id,
+      userInfo: this.props.userInfo,
       modal: false
     }
 
@@ -37,10 +38,10 @@ export default class EditSchool extends Component {
     }
     this.props.editSchool(schoolHold, requestOptions);
     this.setState({
-      curSchool: '',
-      curDescription: '',
-      curAddress: '',
-      curFunds: '',
+      curSchool: this.props.name,
+      curDescription: this.props.description,
+      curAddress: this.props.address,
+      curFunds: this.props.requested_funds,
       modal: false
     })
   }
@@ -54,7 +55,6 @@ export default class EditSchool extends Component {
 
 
   render() {
-    console.log(this.props.userInfo)
     return (
       <div className="addSchoolDiv">
         <Button color="primary" onClick={this.toggle}>Edit School</Button>
