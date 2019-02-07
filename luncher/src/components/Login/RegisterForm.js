@@ -39,12 +39,9 @@ export default class RegisterForm extends Component {
     .then(res => {
         console.log(res)
         localStorage.setItem('jwt', res.data.token);
-        localStorage.setItem('username', res.data.username);
     })
     .catch(err => console.error(err));
-    if(localStorage.getItem('jwt')) {
-      this.props.history.push('/')
-    }
+    this.props.history.push('/')
   }
 
 
@@ -82,7 +79,7 @@ export default class RegisterForm extends Component {
                     />
                 </div>
                 <div>
-                    <button type="submit">Signin</button>
+                    <button type="submit">Register</button>
                 </div>
             </Form>
             </Modal>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Landing from './view/Landing';
-import { fetchSchools, addSchool, giveDonation, login, getSchool } from './actions';
+import { fetchSchools, addSchool, giveDonation, login, getSchool, editSchool, removeSchool } from './actions';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
@@ -14,10 +14,31 @@ import './css/index.css';
 import './css/leaflet.css';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      initialized: false,
+    }
+  }
 
   componentDidMount() {
+    if(!this.state.initialized){
     this.props.fetchSchools();
+    }
+    this.setState({
+      initialized: true
+    })
   }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.schools.length !== this.props.schools.length) {
+      this.props.fetchSchools();
+    }
+  }
+
+  // componentDidMount() {
+  //   this.props.fetchSchools();
+  // }
 
   // componentDidUpdate(prevProps) {
   //   if (prevProps.schools.length !== this.props.schools.length) {
@@ -51,8 +72,12 @@ const mapStateToProps = state => {
     error: state.error,
     login: state.login,
     getSchool: state.getSchool,
-    thisSchool: state.thisSchool
+    thisSchool: state.thisSchool,
+    editSchool: state.editSchool,
+    giveDonation: state.giveDonation,
+    userInfo: state.userInfo,
+    removeSchool: state.removeSchool
   };
 };
 
-export default connect(mapStateToProps, { fetchSchools, addSchool, giveDonation, login, getSchool })(App);
+export default connect(mapStateToProps, { fetchSchools, addSchool, editSchool, removeSchool, giveDonation, login, getSchool })(App);

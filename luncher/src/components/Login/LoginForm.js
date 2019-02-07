@@ -49,7 +49,7 @@ export default class LoginForm extends Component {
                 </div>
                 <div>
                     <button className="formButton" type="submit">Signin</button>
-                    <RegisterForm />
+                    <RegisterForm {...this.props} />
                 </div>
             </Form>
       </div>

@@ -6,6 +6,7 @@ export const FETCH_FAIL = 'FETCH_FAIL';
 export const ADD_SCHOOL = "ADD_SCHOOL";
 export const SCHOOL_ADDED = "SCHOOL_ADDED";
 export const EDIT_SCHOOL = "EDIT_SCHOOL";
+export const EDIT_FAIL = "EDIT_FAIL";
 export const EDIT_COMPLETE = "EDIT_COMPLETE";
 export const GIVE_DONATION = "GIVE_DONATION";
 export const DONATION_SUCCESS = "DONATION_SUCCESS";
@@ -35,20 +36,22 @@ export const addSchool = (school, requestOptions) => dispatch => {
         {headers: requestOptions})
         .then(res => {
             dispatch({ type: SCHOOL_ADDED, payload: res.data});
+            window.location.href = '/admin'
         })
         .catch(err => console.log(err));
 }
 
-export const editSchool = (school) => dispatch => {
+export const editSchool = (school, requestOptions) => dispatch => {
     dispatch({ type: EDIT_SCHOOL });
     Axios
         .put(`https://luncher-app-backend.herokuapp.com/schools/${school.id}`, {
-            id: school.id,
-            school: school.name,
-            description: school.description
-        })
+            name: school.name,
+            description: school.description,
+            address: school.address,
+            requested_funds: school.requested_funds,
+        }, {headers: requestOptions})
         .then(res => dispatch({ type: EDIT_COMPLETE, payload: res.data }))
-        .catch(err => console.log(err));
+        .catch(err => dispatch({ type: EDIT_FAIL, payload: err.response }));
 }
 
 export const giveDonation = (donationTtl, id, requestOptions) => dispatch => {
@@ -69,6 +72,7 @@ export const login = (loginInfo) => dispatch => {
         .post(`https://luncher-app-backend.herokuapp.com/api/login/`, loginInfo)
         .then(res => {        
             localStorage.setItem('jwt', res.data.token);
+            window.location.href = '/admin'
             dispatch({type: LOGGED_IN, payload: res.data})
             Axios
                 .get(`https://luncher-app-backend.herokuapp.com/api/users/${res.data.id}`)
@@ -89,10 +93,12 @@ export const getSchool = (schoolID) => dispatch => {
         .catch(err => console.log('error'))
 }
 
-export const removeSchool = (schoolID) => dispatch => {
+export const removeSchool = (schoolID, requestOptions) => dispatch => {
     dispatch({ type: REMOVE_SCHOOL });
     Axios
-        .delete(`https://luncher-app-backend.herokuapp.com/schools/${schoolID}`)
+        .delete(`https://luncher-app-backend.herokuapp.com/schools/${schoolID}`, {
+            headers: requestOptions
+        })
         .then(res => dispatch({ type: SCHOOL_REMOVED, payload: res.data }))
         .catch(err => console.log(err))
 }
