@@ -36,7 +36,7 @@ export const addSchool = (school, requestOptions) => dispatch => {
         {headers: requestOptions})
         .then(res => {
             dispatch({ type: SCHOOL_ADDED, payload: res.data});
-            window.location.href = '/donate'
+            window.location.href = '/admin'
         })
         .catch(err => console.log(err));
 }
@@ -72,6 +72,7 @@ export const login = (loginInfo) => dispatch => {
         .post(`https://luncher-app-backend.herokuapp.com/api/login/`, loginInfo)
         .then(res => {        
             localStorage.setItem('jwt', res.data.token);
+            window.location.href = '/admin'
             dispatch({type: LOGGED_IN, payload: res.data})
             Axios
                 .get(`https://luncher-app-backend.herokuapp.com/api/users/${res.data.id}`)
