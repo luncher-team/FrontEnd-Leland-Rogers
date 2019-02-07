@@ -57,6 +57,12 @@ body {
   margin: 0px 5px;
 }
 
+@media(max-width:660px){
+  .navHead {
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
+}
 /* LANDING */
 
 .jumboMain {
@@ -147,6 +153,14 @@ body {
   background-size: cover;
   background-position: center;
   height: 700px;
+}
+
+.adminInfo {
+  padding: 7.5px;
+}
+
+.adminInfo h3 {
+  text-decoration: underline;
 }
 
 .bottomContentAdmin {

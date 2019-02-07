@@ -19,11 +19,15 @@ export default class SchoolPage extends Component {
     console.log(this.props)
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.thisSchool.id !== this.props.thisSchool.id) {
-      this.props.getSchool(this.state.thisSchool);
-    }
+  componentWillReceiveProps(nextProps){
+    this.setState({ data: nextProps.data })
   }
+
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.thisSchool.id !== this.state.thisSchool.id) {
+  //     this.props.getSchool(this.state.thisSchool);
+  //   }
+  // }
   
   toggle() {
     this.setState({ collapse: !this.state.collapse });

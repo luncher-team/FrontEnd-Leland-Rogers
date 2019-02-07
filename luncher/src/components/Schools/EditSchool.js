@@ -17,6 +17,10 @@ export default class EditSchool extends Component {
     this.toggle = this.toggle.bind(this);
   }
 
+  componentWillReceiveProps(nextProps){
+    this.setState({ data: nextProps.data })
+  }
+
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value

@@ -11,6 +11,12 @@ export default class AdminHome extends Component {
             
         }
     }
+
+    componentDidMount(){
+      if(this.props.userInfo === Array[0]) {
+        this.login()
+      }
+    }
   render() {
     console.log(this.props.userInfo)
     return (
@@ -25,11 +31,13 @@ export default class AdminHome extends Component {
           <div className="listedAdmin">
             <SchoolView {...this.props} />
           </div>
-          <div>
+          <div className="adminInfo">
             <h3>
               Admin info
             </h3>
-            
+            <div className="adminInfoData">
+
+            </div>
             <AddSchool {...this.props} />
           </div>
         </div>

@@ -36,6 +36,7 @@ export const addSchool = (school, requestOptions) => dispatch => {
         {headers: requestOptions})
         .then(res => {
             dispatch({ type: SCHOOL_ADDED, payload: res.data});
+            window.location.href = '/donate'
         })
         .catch(err => console.log(err));
 }

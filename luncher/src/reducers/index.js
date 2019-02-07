@@ -32,7 +32,7 @@ const initialState = {
     error: '',
     schools: [],
     userInfo: [],
-    thisSchool: [],
+    thisSchool: {},
 }
 
 const rootReducer = (state = initialState, action) => {
