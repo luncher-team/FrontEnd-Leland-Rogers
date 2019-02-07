@@ -97,8 +97,8 @@ export default class Landing extends Component {
                 <br></br><br></br>
                 <p>~ There is a form (name, email) that goes here ~</p>
                 <br></br><br></br>
-                {/* <input type="text" placeholder="Name" name="name" required>
-                <input type="text" placeholder="Email address" name="mail" required> */}
+                {/* <Input type="text" placeholder="Name" name="name" required />
+                <Input type="text" placeholder="Email address" name="mail" required /> */}
                 <div className="btn" type="submit">
                   Subscribe
                 </div>

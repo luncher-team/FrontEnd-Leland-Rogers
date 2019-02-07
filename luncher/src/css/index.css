@@ -9046,7 +9046,7 @@ section a.divider .leading-arrow:hover {
   transition-duration: 0.5s;
 }
 .sign-in-page .splash {
-  height: 99%;
+  height: 100vh;
   -ms-transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -9078,32 +9078,36 @@ section a.divider .leading-arrow:hover {
 .sign-in-page .splash .login h3 {
   text-shadow: 1px 1px 5px black;
 }
-.sign-in-page .splash .login input[type=text] {
+.sign-in-page .splash .login .input {
   width: 75%;
   max-width: 475px;
-  padding: 12px 20px;
-  margin: 8px 0;
+  margin: 8px auto;
   border: 0;
   border-left: 5px solid #AE4110;
   padding-right: 10px;
 }
 @media (min-width: 0px) and (max-width: 600px) {
-  .sign-in-page .splash .login input[type=text] {
+  .sign-in-page .splash .login .input {
     width: 85%;
   }
+}
+.sign-in-page .splash .login .input .form-control {
+  border: 0;
+  border-radius: 0;
+  font-size: 1.6rem;
 }
 .sign-in-page .splash .login p {
   text-shadow: 1px 1px 5px black;
 }
 .sign-in-page .splash .login p a {
-  color: #bd3833;
+  color: #AE4110;
 }
 .sign-in-page .splash .btn {
   display: flex;
   justify-content: center;
   margin: 8px auto 0;
   background-color: #ffffff;
-  color: #bd3833;
+  color: #AE4110;
   border-radius: 0px;
   font-size: 1.8rem;
   font-weight: bolder;
@@ -9120,7 +9124,7 @@ section a.divider .leading-arrow:hover {
 }
 .sign-in-page .splash .btn:hover {
   color: #ffffff;
-  background-color: #bd3833;
+  background-color: #AE4110;
   -webkit-transition-duration: 0.75s;
   -moz-transition-duration: 0.75s;
   transition-duration: 0.75s;
@@ -9130,13 +9134,13 @@ section a.divider .leading-arrow:hover {
     width: 70%;
   }
 }
-section a.divider {
+section .divider {
   display: grid;
   width: 100%;
   margin-top: -3px;
   text-decoration: none;
 }
-section a.divider .leading-arrow {
+section .divider .leading-arrow {
   background-color: #18140f;
   color: #E5DABD;
   font-size: 5rem;
@@ -9145,7 +9149,7 @@ section a.divider .leading-arrow {
   border: 2px solid #18140f;
   z-index: 5;
 }
-section a.divider .leading-arrow:hover {
+section .divider .leading-arrow:hover {
   transform: scale(1.25);
   transition-duration: 0.5s;
 }

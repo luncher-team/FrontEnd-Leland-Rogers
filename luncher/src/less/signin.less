@@ -1,6 +1,6 @@
 .sign-in-page { 
   .splash {
-    height: 99%;
+    height: 100vh;
     -ms-transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
@@ -25,27 +25,36 @@
       left: 0;
       top: 25%;
       width: 100%;
+      // max-width: 800px;
+      // margin: 0 auto;
       text-align: center;
       color: @apple-red;
       h3 { 
         .font-shadow;
       }
-      input[type=text] {
+      .input {
         width: 75%;
         max-width: 475px;
-        padding: 12px 20px;
-        margin: 8px 0;
+        // padding: 12px 20px;
+        margin: 8px auto;
         border: 0;
         .border-style;
         @media @phone {
           width: 85%;
-          
         }
+        .form-control {
+          border: 0;
+          border-radius: 0;
+          font-size: 1.6rem;
+        }
+      }
+      .login-register-buttons {
+        
       }
       p {
         .font-shadow;
         a {
-          color: @apple-red;
+          color: @luncher-saddle;
         }
       }
     }
@@ -53,7 +62,7 @@
       display: flex;
       justify-content: center;
       margin: 8px auto 0;
-      .btn(@white; @apple-red; @white; @apple-red; 25%; 0px; 1.8rem);
+      .btn(@white; @luncher-saddle; @white; @luncher-saddle; 25%; 0px; 1.8rem);
       .border-style;
       z-index: 1;
     }
@@ -61,7 +70,7 @@
 }
 
 
-section a.divider {
+section .divider {
   display: grid;
   width: 100%;
   margin-top: -3px;

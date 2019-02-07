@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Input } from 'reactstrap';
 import RegisterForm from './RegisterForm';
+import { Link } from 'react-router-dom';
 
 export default class LoginForm extends Component {
   constructor(){
@@ -26,33 +27,104 @@ export default class LoginForm extends Component {
 
   render() {
     return (
-      <div className="loginForm">
-      <h3>Log In below...</h3>
-         <Form onSubmit={this.handleSubmit}>
-                <div>
-                    <label htmlFor="">Username</label>
-                    <Input
-                        name="username"
-                        value={this.state.username}
-                        onChange={this.handleChange}
-                        type="text"
-                    />
-                </div>
-                <div>
-                    <label htmlFor="">Password</label>
-                    <Input
-                        name="password"
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                        type="password"
-                    />
-                </div>
-                <div>
-                    <button className="formButton" type="submit">Signin</button>
-                    <RegisterForm {...this.props} />
-                </div>
+      <React.Fragment>
+      <div className='sign-in-page'>
+        <section className="splash">
+
+          <div className="splash-image">
+            <div className="splash-overlay"></div>
+          </div>
+
+          <div className="login">
+            <h3>Log In below...</h3>
+
+            <Form onSubmit={this.handleSubmit}>
+              <div class="input">
+                <Input
+                  name="username"
+                  placeholder="Username" 
+                  value={this.state.username}
+                  onChange={this.handleChange}
+                  type="text"
+                />
+              </div>
+              <div class="input">
+                <Input
+                  name="password" 
+                  placeholder="Password" 
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                  type="password"
+                />
+              </div>
+
+              <div className="login-register-buttons">
+                <button className="formButton btn" type="submit">Sign-In</button>
+                <RegisterForm {...this.props} />
+              </div>
+
             </Form>
+          </div>
+
+          {/* <form className="login">
+            <h3>Sign-in to your account</h3>
+              <br></br>
+            <input type="text" id="fname" name="fname" placeholder="Email">
+              <br></br>
+            <input type="text" id="lname" name="lname" placeholder="Password">
+            <div className="btn">Sign-In</div>
+              <br></br>
+            <p><a href="./resetpassword.html">Need help?</a> | <a href="">Don't have an account?</a></p>
+          </form> */}
+          
+            
+            
+        </section>
+
+        <section>
+          <div className="divider"><i className="leading-arrow fas fa-arrow-alt-circle-down"></i></div>
+        </section>
+
+        <section className="container-basic sign-in-footer">
+          
+          <section className="contact" id="contact">
+            <div className="grid-col-4">
+              <h3>Contact Us</h3>
+
+              <p className=" icon">
+                <i className="fas fa-envelope"></i>
+              </p>
+              <p className=" text" id="mapid">
+                get@luncher.app
+              </p>
+              <Link to=''><i className="social fab fa-twitter"></i></Link>
+              <p className="social-text">Follow us on Twitter!</p>
+              
+              <p className=" icon">
+                <i className="fas fa-phone"></i>
+              </p>
+              <p className=" text" id="mapid">
+                1-800-YUM-GIFT
+              </p>
+              <Link to=''><i className="social fab fa-patreon"></i></Link>
+              <p className="social-text">Be our patrons on Patreon!</p>
+
+              <p className=" icon">
+                <i className="fas fa-map-marker-alt"></i>
+              </p>
+              <p className=" text" id="mapid">
+                111 Yosemite Way<br></br>
+                Mendocino, CA
+              </p>
+              <Link to=''><i className="social fas fa-share-square"></i></Link>
+              <p className="social-text">Share this page!</p>
+
+            </div>
+          </section>
+        
+        </section>
       </div>
+      </React.Fragment>
     )
   }
 }

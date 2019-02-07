@@ -10,7 +10,7 @@ export default class NavHead extends Component {
           <h1><Link to='/'>Luncher</Link></h1>
           <ul>
             <li><Link to='donate' className='btn'>Donate</Link></li>
-            <li><Link to='signin' className='btn'>Sign-In</Link></li>
+            <li><Link to='login' className='btn'>Sign-In</Link></li>
           </ul>
         </nav>
 
