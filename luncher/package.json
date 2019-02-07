@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.2",
+    "classnames": "^2.2.6",
     "jsonwebtoken": "^8.4.0",
     "notistack": "^0.4.2",
+    "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"

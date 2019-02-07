@@ -10,13 +10,19 @@ export default class SchoolPage extends Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       collapse: false,
-      id: this.props.thisSchool.id
+      thisSchool: this.props.match.params.id
     }
   }
 
   componentDidMount(){
-    this.props.getSchool(this.props.match.params.id);
+    this.props.getSchool(this.state.thisSchool);
     console.log(this.props)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.thisSchool.id !== this.props.thisSchool.id) {
+      this.props.getSchool(this.state.thisSchool);
+    }
   }
   
   toggle() {
@@ -27,7 +33,7 @@ export default class SchoolPage extends Component {
     const requestOptions = {
       'Authorization': `${localStorage.getItem('jwt')}`
     }
-    this.props.removeSchool(this.state.id, requestOptions)
+    this.props.removeSchool(this.state.thisSchool, requestOptions)
     this.props.history.push('/')
   }
 

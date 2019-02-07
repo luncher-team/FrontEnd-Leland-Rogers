@@ -1,21 +1,16 @@
-import React, {Component} from 'react'
+import React from 'react'
 import School from './School';
 
-
-class Schools extends Component {
-  
-  componentDidMount() {
-    this.props.fetchSchools();
-  }
-  render(){
+export default function Schools(props) {
   return (
     <div className="schoolGrid">
-      {this.props.schools.map(school => (
-          <School school={school} {...this.props} key={Date.now()+Math.random()} />
+      {props.schools.map(school => (
+          <School 
+            id={school.id} 
+            name={school.name} 
+            description={school.description}
+            key={Date.now()+Math.random()} />
       ))}
     </div>
   )
-      }
 }
-
-export default Schools

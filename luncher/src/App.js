@@ -13,9 +13,20 @@ import SchoolPage from './components/Schools/SchoolPage';
 
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      initialized: false,
+    }
+  }
 
   componentDidMount() {
+    if(!this.state.initialized){
     this.props.fetchSchools();
+    }
+    this.setState({
+      initialized: true
+    })
   }
 
   componentDidUpdate(prevProps) {
@@ -23,6 +34,16 @@ class App extends Component {
       this.props.fetchSchools();
     }
   }
+
+  // componentDidMount() {
+  //   this.props.fetchSchools();
+  // }
+
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.schools.length !== this.props.schools.length) {
+  //     this.props.fetchSchools();
+  //   }
+  // }
 
   render() {
     return (
@@ -51,6 +72,7 @@ const mapStateToProps = state => {
     login: state.login,
     getSchool: state.getSchool,
     thisSchool: state.thisSchool,
+    editSchool: state.editSchool,
     giveDonation: state.giveDonation,
     userInfo: state.userInfo,
     removeSchool: state.removeSchool
