@@ -6,20 +6,10 @@ export default class DonateForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      school: this.props.school,
-      curAmt: this.props.curAmt,
+      school: this.props.thisSchool,
+      curAmt: this.props.thisSchool.donated,
       donation: 0
     }
-  }
-
-  componentDidMount() {
-    console.log(this.state.curAmt)
-    const requestOptions = {
-        'Authorization': `${localStorage.getItem('jwt')}`
-      }
-    this.setState({
-      requestOptions: requestOptions
-    })
   }
 
   handleChange = e => {
@@ -30,21 +20,25 @@ export default class DonateForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const requestOptions = {
+      'Authorization': `${localStorage.getItem('jwt')}`
+    }
     if(this.state.curAmt === null){
       this.setState({
         curAmt: 0
       })
     }
     let donAdd = Number(this.state.donation) + Number(this.state.curAmt);
-    console.log(donAdd)
-    this.props.giveDonation(donAdd, this.state.school.id, this.state.requestOptions);
+    this.props.giveDonation(donAdd, this.state.school.id, requestOptions);
     this.setState({
       donation: 0,
-      curAmt: this.props.school.donated
+      curAmt: this.props.thisSchool.donated
     })
   }
 
   render() {
+    console.log(this.state.school)
+    console.log(this.state.school.id)
     return (
       <div>
       <Form onSubmit={e => this.handleSubmit(e)}>

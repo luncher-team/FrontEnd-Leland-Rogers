@@ -35,8 +35,8 @@ export default class SchoolPage extends Component {
           Total amount donated: ${this.props.thisSchool.donated}
         </div>
         <Button color="primary" onClick={this.toggle} style={{ marginBottom: '1rem' }}>Donate Now</Button>
-        <Collapse isOpen={this.state.collapse}>
-          <DonateForm {...this.props} curAmt={this.props.thisSchool.donated} />
+        <Collapse {...this.props} isOpen={this.state.collapse}>
+          <DonateForm {...this.props} />
         </Collapse>
       </div>
     )

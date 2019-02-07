@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import School from './School';
-import { withSnackbar } from 'notistack';
 
 
 class Schools extends Component {
@@ -15,4 +14,4 @@ class Schools extends Component {
       }
 }
 
-export default withSnackbar(Schools)
+export default Schools

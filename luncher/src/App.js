@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Landing from './view/Landing';
 import { fetchSchools, addSchool, giveDonation, login, getSchool } from './actions';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -51,7 +50,9 @@ const mapStateToProps = state => {
     error: state.error,
     login: state.login,
     getSchool: state.getSchool,
-    thisSchool: state.thisSchool
+    thisSchool: state.thisSchool,
+    giveDonation: state.giveDonation,
+    userInfo: state.userInfo
   };
 };
 

@@ -33,7 +33,8 @@ export default class AddSchool extends Component {
       description: this.state.curDescription,
       address: this.state.curAddress,
       requested_funds: this.state.curFunds,
-      donated: this.state.curDonated
+      donated: this.state.curDonated,
+      admin_id: this.props.userInfo.id
     }
     this.props.addSchool(schoolHold, requestOptions);
     this.setState({
@@ -55,6 +56,7 @@ export default class AddSchool extends Component {
 
 
   render() {
+    console.log(this.props.userInfo)
     return (
       <div className="addSchoolDiv">
         <Button color="primary" onClick={this.toggle}>Add School</Button>

@@ -12,6 +12,7 @@ export default class AdminHome extends Component {
         }
     }
   render() {
+    console.log(this.props.userInfo)
     return (
       <div>
           <Authenticate />
