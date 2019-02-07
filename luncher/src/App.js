@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Landing from './view/Landing';
 import { fetchSchools, addSchool, giveDonation, login, getSchool } from './actions';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -11,7 +10,8 @@ import DonationHome from './view/DonationHome';
 import AdminHome from './view/AdminHome';
 import RegisterForm from './components/Login/RegisterForm';
 import SchoolPage from './components/Schools/SchoolPage';
-
+import './css/index.css';
+import './css/leaflet.css';
 
 class App extends Component {
 
