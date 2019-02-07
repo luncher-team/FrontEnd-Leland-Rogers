@@ -91,10 +91,12 @@ export const getSchool = (schoolID) => dispatch => {
         .catch(err => console.log('error'))
 }
 
-export const removeSchool = (schoolID) => dispatch => {
+export const removeSchool = (schoolID, requestOptions) => dispatch => {
     dispatch({ type: REMOVE_SCHOOL });
     Axios
-        .delete(`https://luncher-app-backend.herokuapp.com/schools/${schoolID}`)
+        .delete(`https://luncher-app-backend.herokuapp.com/schools/${schoolID}`, {
+            headers: requestOptions
+        })
         .then(res => dispatch({ type: SCHOOL_REMOVED, payload: res.data }))
         .catch(err => console.log(err))
 }

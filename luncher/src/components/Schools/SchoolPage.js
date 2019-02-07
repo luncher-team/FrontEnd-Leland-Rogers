@@ -10,6 +10,7 @@ export default class SchoolPage extends Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       collapse: false,
+      id: this.props.thisSchool.id
     }
   }
 
@@ -20,6 +21,14 @@ export default class SchoolPage extends Component {
   
   toggle() {
     this.setState({ collapse: !this.state.collapse });
+  }
+
+  handleDeleteSchool = () => {
+    const requestOptions = {
+      'Authorization': `${localStorage.getItem('jwt')}`
+    }
+    this.props.removeSchool(this.state.id, requestOptions)
+    this.props.history.push('/')
   }
 
   render() {
@@ -40,6 +49,7 @@ export default class SchoolPage extends Component {
           <DonateForm {...this.props} />
         </Collapse>
         <EditSchool {...this.props} />
+        <Button color="danger" onClick={this.handleDeleteSchool}>Delete</Button>
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Landing from './view/Landing';
-import { fetchSchools, addSchool, giveDonation, login, getSchool, editSchool } from './actions';
+import { fetchSchools, addSchool, giveDonation, login, getSchool, editSchool, removeSchool } from './actions';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
@@ -52,8 +52,9 @@ const mapStateToProps = state => {
     getSchool: state.getSchool,
     thisSchool: state.thisSchool,
     giveDonation: state.giveDonation,
-    userInfo: state.userInfo
+    userInfo: state.userInfo,
+    removeSchool: state.removeSchool
   };
 };
 
-export default connect(mapStateToProps, { fetchSchools, addSchool, editSchool, giveDonation, login, getSchool })(App);
+export default connect(mapStateToProps, { fetchSchools, addSchool, editSchool, removeSchool, giveDonation, login, getSchool })(App);
