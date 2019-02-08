@@ -27,13 +27,6 @@ export default class LoginForm extends Component {
 
   render() {
     return (
-      <React.Fragment>
-      <div className='sign-in-page'>
-        <section className="splash">
-
-          <div className="splash-image">
-            <div className="splash-overlay"></div>
-          </div>
 
           <div className="login">
             <h3>Log In below...</h3>
@@ -66,56 +59,6 @@ export default class LoginForm extends Component {
             </Form>
           </div>            
             
-        </section>
-
-        <section>
-          <div className="divider"><i className="leading-arrow fas fa-arrow-alt-circle-down"></i></div>
-        </section>
-
-        <section className="container-basic sign-in-footer">
-          
-          <section className="contact" id="contact">
-            <div className="grid-col-4">
-              <h3>Contact Us</h3>
-
-              <p className=" icon">
-                <i className="fas fa-envelope"></i>
-              </p>
-              <p className=" text" id="mapid">
-                get@luncher.app
-              </p>
-              <Link to=''><i className="social fab fa-twitter"></i></Link>
-              <p className="social-text">Follow us on Twitter!</p>
-              
-              <p className=" icon">
-                <i className="fas fa-phone"></i>
-              </p>
-              <p className=" text" id="mapid">
-                1-800-YUM-GIFT
-              </p>
-              <Link to=''><i className="social fab fa-patreon"></i></Link>
-              <p className="social-text">Be our patrons on Patreon!</p>
-
-              <p className=" icon">
-                <i className="fas fa-map-marker-alt"></i>
-              </p>
-              <p className=" text" id="mapid">
-                111 Yosemite Way<br></br>
-                Mendocino, CA
-              </p>
-              <Link to=''><i className="social fas fa-share-square"></i></Link>
-              <p className="social-text">Share this page!</p>
-
-            </div>
-          </section>
-        
-        </section>
-        <footer>
-          <p>Copyright Luncher 2019</p>
-        </footer>
-        
-      </div>
-      </React.Fragment>
     )
   }
 }

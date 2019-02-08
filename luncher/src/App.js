@@ -10,8 +10,6 @@ import DonationHome from './view/DonationHome';
 import AdminHome from './view/AdminHome';
 import RegisterForm from './components/Login/RegisterForm';
 import SchoolPage from './components/Schools/SchoolPage';
-import './css/index.css';
-import './css/leaflet.css';
 
 class App extends Component {
   constructor(){
@@ -35,17 +33,6 @@ class App extends Component {
       this.props.fetchSchools();
     }
   }
-
-  // componentDidMount() {
-  //   this.props.fetchSchools();
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.schools.length !== this.props.schools.length) {
-  //     this.props.fetchSchools();
-  //   }
-  // }
-
   render() {
     return (
       <Router>

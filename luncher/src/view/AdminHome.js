@@ -18,30 +18,12 @@ export default class AdminHome extends Component {
       }
     }
   render() {
-    console.log(this.props.userInfo)
     return (
       <div>
           <Authenticate />
-         <div>
-        <div className="jumboAdmin">
-          <div className="jumboButtons">
-          </div>
-        </div>
-        <div className="bottomContentAdmin">
-          <div className="listedAdmin">
-            <SchoolView {...this.props} />
-          </div>
-          <div className="adminInfo">
-            <h3>
-              Admin info
-            </h3>
-            <div className="adminInfoData">
-
-            </div>
+        
             <AddSchool {...this.props} />
-          </div>
-        </div>
-      </div>
+
       </div>
     )
   }
