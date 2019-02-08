@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, CardBody } from 'reactstrap';
+import {  CardTitle, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import LunchPic from '../../assets/img/iStock_18527828_MEDIUM.png';
 
@@ -16,7 +16,7 @@ export default function School(props) {
               <CardBody className='card-text'>{props.description}</CardBody>
               {/* <CardBody className='card-text'>{props.requestedFunds}</CardBody> */}
 
-              <div className="card-text italic donation-need"> $421 </div>
+              {/* <div className="italic donation-need"> $33 </div> */}
 
               <Link to={`/schools/${props.id}`} className='donate-now'>Donate</Link>
             </div>

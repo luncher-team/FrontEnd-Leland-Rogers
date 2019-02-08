@@ -9421,9 +9421,11 @@ section a.divider .leading-arrow:hover {
 .donate .schools .row .card .card-body .card-text {
   font-size: 1.4rem;
   padding: 0 0 20px 0;
+  margin-bottom: 20px;
 }
 .donate .schools .row .card .card-body .donation-need {
   padding: 0 0 5px 0;
+  margin-top: -10px;
   font-weight: 700;
   font-size: 1.8rem;
 }
