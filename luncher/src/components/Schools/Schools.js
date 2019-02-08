@@ -5,16 +5,13 @@ export default function Schools(props) {
   if(props.schools){
   return (
     <React.Fragment>
-      <div className="schoolGrid">
-        {props.schools.map(school => (
-            <School 
-              id={school.id} 
-              name={school.name} 
-              description={school.description}
-              key={Date.now()+Math.random()} />
-        ))}
-      </div>
-      
+      {props.schools.map(school => (
+          <School 
+            id={school.id} 
+            name={school.name} 
+            description={school.description}
+            key={Date.now()+Math.random()} />
+      ))}
     </React.Fragment>
   )
       } else {

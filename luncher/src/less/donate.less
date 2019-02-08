@@ -12,17 +12,8 @@
   }
 
   .schools-by-state {
-    padding: 105px 0 0 0;
+    padding: 56px 0 0 0;
     color: @luncher-saddle;
-    background-image: url("../assets/img/Fruit-bar-pic-Web-USDAgov.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position-y: 2px;
-    @media @phone {
-      padding: 93px 0 0 0;
-    }
     .school-filter-bar {
       background-color: @luncher-dark-olive;
       padding: 20px 0;
@@ -33,20 +24,20 @@
         text-align: center;
         font-size: 1.6rem;
       }
-      .row {
-        margin-top: 20px;
-        .state-labels {
-          font-size: 2rem;
-          text-align: center;
-          a {
-            .btn(@clear-color; @white; @luncher-beige; @luncher-saddle; 33%; 0; 1.8rem; 3px 6px);
-            .border-style(5px; @luncher-saddle);
-            // .box-shadow(2px; 2px; 8px; 0px; rgba(0,0,0,0.75));
-            .box-shadow(2px; 2px; 8px; 0px; rgba(5,5,5,0.75));
-            // .box-shadow;
-          }
-        }
-      }
+      // .row {  // Start filter row
+      //   margin-top: 20px;
+      //   .state-labels {
+      //     font-size: 2rem;
+      //     text-align: center;
+      //     a {
+      //       .btn(@clear-color; @white; @luncher-beige; @luncher-saddle; 33%; 0; 1.8rem; 3px 6px);
+      //       .border-style(5px; @luncher-saddle);
+      //       // .box-shadow(2px; 2px; 8px; 0px; rgba(0,0,0,0.75));
+      //       .box-shadow(2px; 2px; 8px; 0px; rgba(5,5,5,0.75));
+      //       // .box-shadow;
+      //     }
+      //   }
+      // }
     }
   }
 
@@ -55,25 +46,31 @@
       margin: 1.5rem 10% 10% 10%;
       .card {
         color: @luncher-dark-olive;
-        background-color: @luncher-beige;
+        background-color: @luncher-dark-khaki;
         border: 0;
         width: 100%;
         margin: 0 auto;
         .card-body {
-          
+          background-color: @luncher-beige;
+          .card-text {
+            font-size: 1.4rem;
+            padding: 0 0 20px 0;
+          }
           .donation-need {
-            padding: 10px 0;
+            padding: 0 0 5px 0;
             font-weight: 700;
             font-size: 1.8rem;
           }
+          .donate-now {
+            position: absolute;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            font-size: 2.2rem;
+            .btn(@white; @luncher-saddle; @white; @luncher-saddle; 33%; 0; 1.8rem; 3px 6px);
+            .border-style;
+          }
         }
-        a.btn {
-          .btn(@clear-color; @luncher-saddle; @white; @luncher-saddle; 33%; 0; 1.8rem; 3px 6px);
-          .border-style;
-          position: absolute;
-          right: 1.5rem;
-          bottom: 1.5rem;
-        }
+        
       }
     }
     

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SchoolView from './SchoolView';
 import { Link } from 'react-router-dom';
-import Ruskin from '../assets/img/7995804478_c2fac1e07a_b.jpg';
+// import Ruskin from '../assets/img/7995804478_c2fac1e07a_b.jpg';
 
 export default class DonationHome extends Component {
   render() {
@@ -12,6 +12,7 @@ export default class DonationHome extends Component {
         <section className="schools-by-state">
           <div className="school-filter-bar">
             <h1>Donate</h1>
+            <p>These schools need donations, now</p>
             {/* <p>Filter school by state</p>
             <div className="container">
               <div className="row">
@@ -35,20 +36,8 @@ export default class DonationHome extends Component {
           <div className="container-fluid">
             <div className="row">
 
-              {/* <div className="col-12 col-sm-6 col-lg-4 my-4 centered">
-                <div className="card">
-                  <img  src={Ruskin} className="card-img-top" alt="Card image cap" />
-                  <div className="card-body">
-                    <h4 className="card-title">Ruskin Elementary</h4>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <p className="card-text italic">
-                      <div className="donation-need"> $421 </div>
-                    </p>
-                    <Link to="" className="btn">Donate</Link>
-                  </div>
-                </div>
-              </div> */}
-          <SchoolView {...this.props} />
+              <SchoolView {...this.props} />
+              
             </div>
           </div>
         </section>

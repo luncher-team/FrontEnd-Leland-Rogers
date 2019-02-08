@@ -6,9 +6,9 @@ export default class SchoolView extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>
+        {/* <div> */}
           <Schools {...this.props} />
-        </div>
+        {/* </div> */}
       </React.Fragment>
     )
   }

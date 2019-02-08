@@ -98,7 +98,7 @@ section a.divider {
     @media @phone { padding: 20%; }
     @media @medium { padding: 20%; }
     @media @phone-small { padding: 25% 5%; } // Give a little more vertical room on small displays. Take up more horiz space.
-    a {
+    .info-button {
       grid-column: span 2;
       display: flex;
       justify-content: center;
@@ -251,7 +251,7 @@ section a.divider {
           h3 {
             text-align: center;
           }
-          p { 
+          p {
             text-align: center; 
             margin-bottom: 13px;
           }
@@ -264,18 +264,6 @@ section a.divider {
             .border-style;
             .box-shadow(2px; 2px; 8px; 0px; rgba(0,0,0,0.75));
             z-index: 1;
-          }
-          input[type=text] {
-            width: 50%;
-            max-width: 600px;
-            padding: 12px;
-            margin: 8px 0;
-            border: 0;
-            .border-style;
-            @media @phone {
-              width: 90%;
-            }
-
           }
         }
       }

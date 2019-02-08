@@ -39,8 +39,8 @@ export default class Landing extends Component {
 
       <section className="container-basic home">
         <section className="luncher-info" id="luncher-info">
-          <Link to='./signin'>
-            <div className="btn">Sign-in or Register</div>
+          <Link to='./signin' className="">
+            <div className="info-button">Sign-in or Register</div>
           </Link>
 
           <div className="grid">
@@ -94,11 +94,11 @@ export default class Landing extends Component {
               <div className="container-form">
                 <h3>Subscribe to our Newsletter</h3>
                 <p>Stay up to date with the latest Luncher news</p>
-                <br></br><br></br>
+                <br></br>
+                <br></br>
                 <p>~ There is a form (name, email) that goes here ~</p>
-                <br></br><br></br>
-                {/* <Input type="text" placeholder="Name" name="name" required />
-                <Input type="text" placeholder="Email address" name="mail" required /> */}
+                <br></br>
+                <br></br>
                 <div className="btn" type="submit">
                   Subscribe
                 </div>

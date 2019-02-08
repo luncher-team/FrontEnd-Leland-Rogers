@@ -8518,7 +8518,7 @@ nav ul {
   }
 }
 nav ul li {
-  padding: 5px 0;
+  padding: 0px 0;
   margin: 0 0 0 0;
   border-left: 5px solid #AE4110;
   padding-right: 10px;
@@ -8733,7 +8733,7 @@ section a.divider .leading-arrow:hover {
     padding: 25% 5%;
   }
 }
-.home .luncher-info a {
+.home .luncher-info .info-button {
   grid-column: span 2;
   display: flex;
   justify-content: center;
@@ -8754,7 +8754,7 @@ section a.divider .leading-arrow:hover {
   padding-right: 10px;
   z-index: 1;
 }
-.home .luncher-info a:hover {
+.home .luncher-info .info-button:hover {
   color: #ffffff;
   background-color: #AE4110;
   -webkit-transition-duration: 0.75s;
@@ -8762,7 +8762,7 @@ section a.divider .leading-arrow:hover {
   transition-duration: 0.75s;
 }
 @media (min-width: 0px) and (max-width: 600px) {
-  .home .luncher-info a {
+  .home .luncher-info .info-button {
     width: 70%;
   }
 }
@@ -8968,20 +8968,6 @@ section a.divider .leading-arrow:hover {
 @media (min-width: 0px) and (max-width: 600px) {
   .home .newsletter .newsletter-overlay .form .container-form .btn {
     width: 70%;
-  }
-}
-.home .newsletter .newsletter-overlay .form .container-form input[type=text] {
-  width: 50%;
-  max-width: 600px;
-  padding: 12px;
-  margin: 8px 0;
-  border: 0;
-  border-left: 5px solid #AE4110;
-  padding-right: 10px;
-}
-@media (min-width: 0px) and (max-width: 600px) {
-  .home .newsletter .newsletter-overlay .form .container-form input[type=text] {
-    width: 90%;
   }
 }
 .home .contact {
@@ -9405,19 +9391,8 @@ section a.divider .leading-arrow:hover {
   margin-right: 5px;
 }
 .donate .schools-by-state {
-  padding: 105px 0 0 0;
+  padding: 56px 0 0 0;
   color: #AE4110;
-  background-image: url("../assets/img/Fruit-bar-pic-Web-USDAgov.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position-y: 2px;
-}
-@media (min-width: 0px) and (max-width: 600px) {
-  .donate .schools-by-state {
-    padding: 93px 0 0 0;
-  }
 }
 .donate .schools-by-state .school-filter-bar {
   background-color: #18140f;
@@ -9430,59 +9405,34 @@ section a.divider .leading-arrow:hover {
   text-align: center;
   font-size: 1.6rem;
 }
-.donate .schools-by-state .school-filter-bar .row {
-  margin-top: 20px;
-}
-.donate .schools-by-state .school-filter-bar .row .state-labels {
-  font-size: 2rem;
-  text-align: center;
-}
-.donate .schools-by-state .school-filter-bar .row .state-labels a {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  border-radius: 0;
-  font-size: 1.8rem;
-  font-weight: bolder;
-  text-align: center;
-  width: 33%;
-  min-width: 100px;
-  padding: 3px 6px;
-  border: 0;
-  text-decoration: none;
-  cursor: pointer;
-  border-left: 5px solid #AE4110;
-  padding-right: 10px;
-  box-shadow: 2px 2px 8px 0px rgba(5, 5, 5, 0.75);
-}
-.donate .schools-by-state .school-filter-bar .row .state-labels a:hover {
-  color: #E5DABD;
-  background-color: #AE4110;
-  -webkit-transition-duration: 0.75s;
-  -moz-transition-duration: 0.75s;
-  transition-duration: 0.75s;
-}
-@media (min-width: 0px) and (max-width: 600px) {
-  .donate .schools-by-state .school-filter-bar .row .state-labels a {
-    width: 70%;
-  }
-}
 .donate .schools .row {
   margin: 1.5rem 10% 10% 10%;
 }
 .donate .schools .row .card {
   color: #18140f;
-  background-color: #E5DABD;
+  background-color: #81905A;
   border: 0;
   width: 100%;
   margin: 0 auto;
 }
+.donate .schools .row .card .card-body {
+  background-color: #E5DABD;
+}
+.donate .schools .row .card .card-body .card-text {
+  font-size: 1.4rem;
+  padding: 0 0 20px 0;
+}
 .donate .schools .row .card .card-body .donation-need {
-  padding: 10px 0;
+  padding: 0 0 5px 0;
   font-weight: 700;
   font-size: 1.8rem;
 }
-.donate .schools .row .card a.btn {
-  background-color: rgba(255, 255, 255, 0.15);
+.donate .schools .row .card .card-body .donate-now {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  font-size: 2.2rem;
+  background-color: #ffffff;
   color: #AE4110;
   border-radius: 0;
   font-size: 1.8rem;
@@ -9496,11 +9446,8 @@ section a.divider .leading-arrow:hover {
   cursor: pointer;
   border-left: 5px solid #AE4110;
   padding-right: 10px;
-  position: absolute;
-  right: 1.5rem;
-  bottom: 1.5rem;
 }
-.donate .schools .row .card a.btn:hover {
+.donate .schools .row .card .card-body .donate-now:hover {
   color: #ffffff;
   background-color: #AE4110;
   -webkit-transition-duration: 0.75s;
@@ -9508,7 +9455,7 @@ section a.divider .leading-arrow:hover {
   transition-duration: 0.75s;
 }
 @media (min-width: 0px) and (max-width: 600px) {
-  .donate .schools .row .card a.btn {
+  .donate .schools .row .card .card-body .donate-now {
     width: 70%;
   }
 }
