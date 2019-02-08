@@ -25,47 +25,32 @@
       // left: 0;
       top: 56px*2;
       width: 100%;
-      max-width: 800px;
-      // margin: 0 auto;
       text-align: center;
-      color: @luncher-beige;
-      background-color: @luncher-dark-olive;
-      padding: 20px;
-      .box-shadow;
       .schoolPageFull {
-
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: @luncher-dark-olive;
+        color: @luncher-beige;
+        padding: 20px 30px;
+        .box-shadow(0px;6px;20px;3px;@black); 
         h2 { 
           color: @luncher-sienna;
         }
         .schoolAbout {
           font-size: 1.6rem;
         }
-        .input {
-          width: 75%;
-          max-width: 475px;
-          // padding: 12px 20px;
-          margin: 8px auto;
-          border: 0;
-          .border-style;
-          @media @phone {
-            width: 85%;
-          }
-          .form-control {
-            border: 0;
-            border-radius: 0;
-            font-size: 1.6rem;
+        .progress { 
+          height: 2.5rem;
+          font-size: 1.4rem;
+          margin: 20px 0 10px 0;
+          .progress-bar {
+            color: @luncher-dark-olive;
           }
         }
-      
-      }
-      .login-register-buttons {
-        max-width: 450px;
-        margin: 0 auto;
-      }
-      p {
-        .font-shadow;
-        a {
-          color: @luncher-saddle;
+        .donateTtl {
+          font-size: 1.8rem;
+          margin-bottom: 20px;
+          color: @luncher-dark-khaki;
         }
       }
     }

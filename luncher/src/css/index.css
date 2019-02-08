@@ -9623,12 +9623,15 @@ section a.divider .leading-arrow:hover {
   position: absolute;
   top: 112px;
   width: 100%;
-  max-width: 800px;
   text-align: center;
-  color: #E5DABD;
+}
+.school-page .splash .schoolPage .schoolPageFull {
+  max-width: 800px;
+  margin: 0 auto;
   background-color: #18140f;
-  padding: 20px;
-  box-shadow: 0px 6px 20px 3px #232323;
+  color: #E5DABD;
+  padding: 20px 30px;
+  box-shadow: 0px 6px 20px 3px #000000;
 }
 .school-page .splash .schoolPage .schoolPageFull h2 {
   color: #763C22;
@@ -9636,33 +9639,18 @@ section a.divider .leading-arrow:hover {
 .school-page .splash .schoolPage .schoolPageFull .schoolAbout {
   font-size: 1.6rem;
 }
-.school-page .splash .schoolPage .schoolPageFull .input {
-  width: 75%;
-  max-width: 475px;
-  margin: 8px auto;
-  border: 0;
-  border-left: 5px solid #AE4110;
-  padding-right: 10px;
+.school-page .splash .schoolPage .schoolPageFull .progress {
+  height: 2.5rem;
+  font-size: 1.4rem;
+  margin: 20px 0 10px 0;
 }
-@media (min-width: 0px) and (max-width: 600px) {
-  .school-page .splash .schoolPage .schoolPageFull .input {
-    width: 85%;
-  }
+.school-page .splash .schoolPage .schoolPageFull .progress .progress-bar {
+  color: #18140f;
 }
-.school-page .splash .schoolPage .schoolPageFull .input .form-control {
-  border: 0;
-  border-radius: 0;
-  font-size: 1.6rem;
-}
-.school-page .splash .schoolPage .login-register-buttons {
-  max-width: 450px;
-  margin: 0 auto;
-}
-.school-page .splash .schoolPage p {
-  text-shadow: 1px 1px 5px black;
-}
-.school-page .splash .schoolPage p a {
-  color: #AE4110;
+.school-page .splash .schoolPage .schoolPageFull .donateTtl {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #81905A;
 }
 .school-page .splash .btn {
   display: flex;
