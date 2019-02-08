@@ -37,6 +37,7 @@ export default class LoginForm extends Component {
       <React.Fragment>
       <div className='sign-in-page'>
         <section className="splash">
+        {(this.props.loggingIn ? <Spinner color="success" /> : <p></p>)}
 
           <div className="splash-image">
             <div className="splash-overlay"></div>
@@ -64,7 +65,7 @@ export default class LoginForm extends Component {
                   type="password"
                 />
               </div>
-              {(this.props.loggingIn ? <Spinner color="success" /> : <p></p>)}
+              
 
               <div className="login-register-buttons">
                 <button className="formButton btn" type="submit">Sign-In</button>

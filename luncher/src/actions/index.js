@@ -70,7 +70,8 @@ export const login = (loginInfo) => dispatch => {
     dispatch({type: LOGGING_IN});
     Axios
         .post(`https://luncher-app-backend.herokuapp.com/api/login/`, loginInfo)
-        .then(res => dispatch({type: LOGGED_IN, payload: res.data})
+        .then(res => {localStorage.setItem('jwt', res.data.token)
+            dispatch({type: LOGGED_IN, payload: res.data})}
         )
         .catch(err => console.error(err));  
     
