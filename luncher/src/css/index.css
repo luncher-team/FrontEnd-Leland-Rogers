@@ -9597,3 +9597,193 @@ section a.divider .leading-arrow:hover {
   color: #ffffff;
   transition-duration: 0.5s;
 }
+.school-page .splash {
+  height: 100vh;
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.school-page .splash .splash-image {
+  background-image: url("../assets/img/21953541749_e2b355be48_b.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  top: 0;
+  height: 100%;
+  position: relative;
+  opacity: 0.95;
+}
+.school-page .splash .splash-image .splash-overlay {
+  background: linear-gradient(#000000, rgba(35, 35, 35, 0.25));
+  background-attachment: fixed;
+  height: 100%;
+}
+.school-page .splash .schoolPage {
+  position: absolute;
+  top: 112px;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  color: #E5DABD;
+  background-color: #18140f;
+  padding: 20px;
+  box-shadow: 0px 6px 20px 3px #232323;
+}
+.school-page .splash .schoolPage .schoolPageFull h2 {
+  color: #763C22;
+}
+.school-page .splash .schoolPage .schoolPageFull .schoolAbout {
+  font-size: 1.6rem;
+}
+.school-page .splash .schoolPage .schoolPageFull .input {
+  width: 75%;
+  max-width: 475px;
+  margin: 8px auto;
+  border: 0;
+  border-left: 5px solid #AE4110;
+  padding-right: 10px;
+}
+@media (min-width: 0px) and (max-width: 600px) {
+  .school-page .splash .schoolPage .schoolPageFull .input {
+    width: 85%;
+  }
+}
+.school-page .splash .schoolPage .schoolPageFull .input .form-control {
+  border: 0;
+  border-radius: 0;
+  font-size: 1.6rem;
+}
+.school-page .splash .schoolPage .login-register-buttons {
+  max-width: 450px;
+  margin: 0 auto;
+}
+.school-page .splash .schoolPage p {
+  text-shadow: 1px 1px 5px black;
+}
+.school-page .splash .schoolPage p a {
+  color: #AE4110;
+}
+.school-page .splash .btn {
+  display: flex;
+  justify-content: center;
+  margin: 8px auto 0;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #AE4110;
+  border-radius: 0px;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  text-align: center;
+  width: 25%;
+  min-width: 100px;
+  padding: 8px 10px;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  border-left: 5px solid #AE4110;
+  padding-right: 10px;
+  z-index: 1;
+}
+.school-page .splash .btn:hover {
+  color: #ffffff;
+  background-color: #AE4110;
+  -webkit-transition-duration: 0.75s;
+  -moz-transition-duration: 0.75s;
+  transition-duration: 0.75s;
+}
+@media (min-width: 0px) and (max-width: 600px) {
+  .school-page .splash .btn {
+    width: 70%;
+  }
+}
+section .divider {
+  display: grid;
+  width: 100%;
+  margin-top: -3px;
+  text-decoration: none;
+}
+section .divider .leading-arrow {
+  background-color: #18140f;
+  color: #E5DABD;
+  font-size: 5rem;
+  margin: -27px auto;
+  border-radius: 28px;
+  border: 2px solid #18140f;
+  z-index: 5;
+}
+section .divider .leading-arrow:hover {
+  transform: scale(1.25);
+  transition-duration: 0.5s;
+}
+.sign-in-footer {
+  display: block;
+  max-width: unset;
+  width: 100%;
+  background-color: #232323;
+}
+.sign-in-footer .contact {
+  background-color: #18140f;
+  color: #9d6a4f;
+  padding: 5% 15%;
+}
+@media (min-width: 0px) and (max-width: 600px) {
+  .sign-in-footer .contact {
+    padding: 10% 5%;
+  }
+}
+@media (min-width: 0px) and (max-width: 350px) {
+  .sign-in-footer .contact {
+    padding: 15% 5%;
+  }
+}
+.sign-in-footer .contact .grid-col-4 {
+  align-items: center;
+}
+@media (min-width: 0px) and (max-width: 600px) {
+  .sign-in-footer .contact .grid-col-4 {
+    grid-template-columns: 10% 80% 10%;
+  }
+}
+.sign-in-footer .contact .grid-col-4 h3 {
+  grid-column: span 4;
+  text-align: center;
+  padding: 0 0 20px 0;
+}
+.sign-in-footer .contact .grid-col-4 .icon,
+.sign-in-footer .contact .grid-col-4 .social {
+  font-size: 2.1rem;
+  text-align: center;
+  align-self: baseline;
+}
+.sign-in-footer .contact .grid-col-4 .text,
+.sign-in-footer .contact .grid-col-4 .social-text {
+  font-size: 1.4rem;
+  margin-left: 10px;
+  align-self: auto;
+}
+.sign-in-footer .contact .grid-col-4 .icon {
+  grid-column: 1;
+}
+.sign-in-footer .contact .grid-col-4 .text {
+  grid-column: 2;
+}
+.sign-in-footer .contact .grid-col-4 .social {
+  grid-column: 3;
+}
+.sign-in-footer .contact .grid-col-4 .social-text {
+  grid-column: 4;
+}
+@media (min-width: 0px) and (max-width: 600px) {
+  .sign-in-footer .contact .grid-col-4 .social-text {
+    display: none;
+  }
+}
+.sign-in-footer .contact .grid-col-4 a {
+  color: #9d6a4f;
+  text-align: center;
+  align-self: baseline;
+}
+.sign-in-footer .contact .grid-col-4 a:hover {
+  color: #ffffff;
+  transition-duration: 0.5s;
+}

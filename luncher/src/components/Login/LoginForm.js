@@ -39,7 +39,7 @@ export default class LoginForm extends Component {
             <h3>Log In below...</h3>
 
             <Form onSubmit={this.handleSubmit}>
-              <div class="input">
+              <div className="input">
                 <Input
                   name="username"
                   placeholder="Username" 
@@ -48,7 +48,7 @@ export default class LoginForm extends Component {
                   type="text"
                 />
               </div>
-              <div class="input">
+              <div className="input">
                 <Input
                   name="password" 
                   placeholder="Password" 
@@ -113,7 +113,7 @@ export default class LoginForm extends Component {
         <footer>
           <p>Copyright Luncher 2019</p>
         </footer>
-        
+
       </div>
       </React.Fragment>
     )
