@@ -86,7 +86,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 isEditing: false,
                 error: '',
-                schools: action.payload
+                thisSchool: action.payload
             }
         case GIVE_DONATION:
             return {

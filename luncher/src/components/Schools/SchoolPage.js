@@ -10,13 +10,19 @@ class SchoolPage extends Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       collapse: false,
-      thisSchool: this.props.match.params.id
+      thisSchoolid: this.props.match.params.id
     }
   }
 
   componentDidMount(){
-    this.props.getSchool(this.state.thisSchool);
+    this.props.getSchool(this.state.thisSchoolid);
     console.log(this.props)
+  }
+
+  componentDidUpdate(prevProps){
+    if(this.props.thisSchool !== prevProps.thisSchool){
+      console.log('FIRED')
+    }
   }
 
   componentWillReceiveProps(nextProps){
