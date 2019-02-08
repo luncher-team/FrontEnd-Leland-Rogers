@@ -1,3 +1,5 @@
+//Home for admin actions including Add School
+
 import React, { Component } from 'react';
 import SchoolView from './SchoolView';
 import AddSchool from '../components/Schools/AddSchool';
@@ -12,11 +14,6 @@ export default class AdminHome extends Component {
         }
     }
 
-    componentDidMount(){
-      if(this.props.userInfo === Array[0]) {
-        this.login()
-      }
-    }
   render() {
     console.log(this.props.userInfo)
     return (

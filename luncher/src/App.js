@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Landing from './view/Landing';
-import { fetchSchools, addSchool, giveDonation, login, getSchool, editSchool, removeSchool } from './actions';
+import { fetchSchools, fetchUser, addSchool, giveDonation, login, getSchool, editSchool, removeSchool } from './actions';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
@@ -36,16 +36,6 @@ class App extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   this.props.fetchSchools();
-  // }
-
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.schools.length !== this.props.schools.length) {
-  //     this.props.fetchSchools();
-  //   }
-  // }
-
   render() {
     return (
       <Router>
@@ -71,13 +61,17 @@ const mapStateToProps = state => {
     isFetching: state.isFetching,
     error: state.error,
     login: state.login,
+    loggingIn: state.loggingIn,
+    loggedInName: state.loggedInName,
+    loggedIn: state.loggedIn,
     getSchool: state.getSchool,
     thisSchool: state.thisSchool,
     editSchool: state.editSchool,
     giveDonation: state.giveDonation,
     userInfo: state.userInfo,
+    fetchUser: state.fetchUser,
     removeSchool: state.removeSchool
   };
 };
 
-export default connect(mapStateToProps, { fetchSchools, addSchool, editSchool, removeSchool, giveDonation, login, getSchool })(App);
+export default connect(mapStateToProps, { fetchSchools, addSchool, editSchool, removeSchool, giveDonation, login, getSchool, fetchUser })(App);

@@ -20,8 +20,13 @@ class SchoolPage extends Component {
     console.log(this.props)
   }
 
+  componentDidUpdate(prevProps){
+    if(this.props.thisSchool !== prevProps.thisSchool){
+    }
+  }
+
   componentWillReceiveProps(nextProps){
-    this.setState({ data: nextProps.data })
+    this.setState({ thisSchool: nextProps.thisSchool })
   }
 
   // componentDidUpdate(prevProps) {

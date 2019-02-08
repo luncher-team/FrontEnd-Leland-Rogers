@@ -1,3 +1,5 @@
+//Form for donations
+
 import React, { Component } from 'react'
 import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 

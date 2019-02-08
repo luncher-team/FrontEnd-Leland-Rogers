@@ -1,3 +1,5 @@
+//Home for donations list holding school cards
+
 import React, { Component } from 'react'
 import SchoolView from './SchoolView';
 import { Link } from 'react-router-dom';

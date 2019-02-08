@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Input } from 'reactstrap';
+import { Form, Input, Spinner } from 'reactstrap';
 import RegisterForm from './RegisterForm';
 import { Link } from 'react-router-dom';
 
@@ -9,6 +9,13 @@ export default class LoginForm extends Component {
     this.state = {
       username: '',
       password: '',
+    }
+  }
+
+  componentDidUpdate() {
+    if(this.props.loggedIn) {
+      localStorage.setItem('jwt', this.props.loggedInToken)
+      this.props.fetchUser(this.props.loggedInId)
     }
   }
 
@@ -57,6 +64,7 @@ export default class LoginForm extends Component {
                   type="password"
                 />
               </div>
+              {(this.props.loggingIn ? <Spinner color="success" /> : <p></p>)}
 
               <div className="login-register-buttons">
                 <button className="formButton btn" type="submit">Sign-In</button>

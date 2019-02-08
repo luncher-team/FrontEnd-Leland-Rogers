@@ -70,19 +70,20 @@ export const login = (loginInfo) => dispatch => {
     dispatch({type: LOGGING_IN});
     Axios
         .post(`https://luncher-app-backend.herokuapp.com/api/login/`, loginInfo)
-        .then(res => {        
-            localStorage.setItem('jwt', res.data.token);
-            window.location.href = '/admin'
-            dispatch({type: LOGGED_IN, payload: res.data})
-            Axios
-                .get(`https://luncher-app-backend.herokuapp.com/api/users/${res.data.id}`)
+        .then(res => dispatch({type: LOGGED_IN, payload: res.data})
+        )
+        .catch(err => console.error(err));  
+    
+}
+
+export const fetchUser = (id) => dispatch => {
+    dispatch({ type: FETCHING_USER });
+    Axios
+        .get(`/${id}`)
             .then(res => {
                 dispatch({type: FETCHED_USER, payload: res.data})
             })
             .catch(err => console.error(err));
-        })
-        .catch(err => console.error(err));  
-    
 }
 
 export const getSchool = (schoolID) => dispatch => {
