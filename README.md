@@ -1,1 +1,1 @@
-Run `yarn build` to build a production copy
+Run `npm build` to build a production copy
